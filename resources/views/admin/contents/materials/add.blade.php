@@ -46,7 +46,20 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                  {{ Form::open(array('url' => 'foo/bar', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
+                 <!--   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"> -->
+                   <input type="hidden" id="csrf" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="container_type" >Container Type:</label>
+                     <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select id="container_type" class="form-control" required>
+                        <option value="">Choose..</option>
+                        <option value="press">Press</option>
+                        <option value="net">Internet</option>
+                        <option value="mouth">Word of mouth</option>
+                      </select>
+                    </div>
+                  </div>
 
                      <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span class="required">*</span>
@@ -74,8 +87,8 @@
                       </select>
                     </div>
                   </div>
-                  
-                </form>
+
+                {{ Form::close() }}
               </div>
             </div>
           </div>
