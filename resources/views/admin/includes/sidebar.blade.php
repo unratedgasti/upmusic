@@ -2,19 +2,36 @@
   <div class="main_container">
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;" align="center">
-          <a href="index.html" class="site_title"><i class="fa fa-paw"></i></a>
+        <div class="navbar nav_title" style="border: 0;" align="center" style="height:800px!important;">
+          &nbsp;
+       <br>
+           <?php
 
-         
+          $url=Request::getPathInfo();
+          $segment=explode("/",$url);
+          $active_url=$segment[2];
+          
+          ?>
+          <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? '../includes/admin/images/upcmulogo2.png' : '../../includes/admin/images/upcmulogo2.png') }}" style="width:20%;"></a>
+
+         &nbsp;
+       <br>
         </div>
 
        <div class="clearfix" align="center">
+       &nbsp;
+       <br>
+       &nbsp;
+       <br>
          <span>UP College of Music</span>
          <br>
-         <span>Index To Filipino Musical Artist and </span>
+         <span>Index to Filipino Musical Artist and </span>
          <br>
          <span>their Works</span>
        </div>
+
+   
+
 
        <!-- menu profile quick info -->
           <!--   <div class="profile clearfix">
@@ -35,23 +52,23 @@
               <div class="menu_section">
                 <!-- <h3>General</h3> -->
                 <ul class="nav side-menu">
-                   <li><a href="Dashboard"><i class="fa fa-table"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
+                   <li class="{{ ($active_url == 'dashboard' ? 'active' : '') }}"><a href="{{URL::to('/admin/dashboard')}}"><i class="fa fa-table"></i> Dashboard <!-- <span class="fa fa-chevron-down"></span> --></a>
                     <!-- <ul class="nav child_menu">
                       <li><a href="tables.html">View All Container Types</a></li>
                       <li><a href="tables_dynamic.html">Add New Container Types</a></li>
                     </ul> -->
                   </li>
-                   <li><a><i class="fa fa-edit"></i> Materials <span class="fa fa-chevron-down"></span></a>
+                   <li class="{{ ($active_url == 'materials' ? 'active' : '') }}"><a><i class="fa fa-edit"></i> Materials <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">View All Materials</a></li>
-                      <li><a href="form_advanced.html">Add New Materials</a></li>
+                      <li><a href="{{URL::to('/admin/materials/view')}}">View All Materials</a></li>
+                      <li><a href="{{URL::to('/admin/materials/add')}}">Add New Materials</a></li>
                       <!-- <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
                       <li><a href="form_upload.html">Form Upload</a></li>
                       <li><a href="form_buttons.html">Form Buttons</a></li> -->
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-user"></i> Authors <span class="fa fa-chevron-down"></span></a>
+                  <li class="{{ ($active_url == 'authors' ? 'active' : '') }}"><a><i class="fa fa-user"></i> Authors <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index.html">View All Authors</a></li>
                       <li><a href="index2.html">Add New Author</a></li>
@@ -59,7 +76,7 @@
                     </ul>
                   </li>
                  
-                  <li><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
+                  <li class="{{ ($active_url == 'subjects' ? 'active' : '') }}"><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">View All Subjects</a></li>
                       <li><a href="media_gallery.html">Add New Subjects</a></li>
@@ -72,13 +89,13 @@
                       <li><a href="calendar.html">Calendar</a></li> -->
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Container Types <span class="fa fa-chevron-down"></span></a>
+                  <li class="{{ ($active_url == 'containertype' ? 'active' : '') }}"><a><i class="fa fa-table"></i> Container Types <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">View All Container Types</a></li>
                       <li><a href="tables_dynamic.html">Add New Container Types</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Material Categories <span class="fa fa-chevron-down"></span></a>
+                  <li class="{{ ($active_url == 'materialcategories' ? 'active' : '') }}"><a><i class="fa fa-bar-chart-o"></i> Material Categories <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="chartjs.html">View All Material Categories</a></li>
                       <li><a href="chartjs2.html">Add New Material Categories</a></li>
@@ -87,7 +104,7 @@
                       <li><a href="other_charts.html">Other Charts</a></li> -->
                     </ul>
                   </li>
-                   <li><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a>
+                   <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="chartjs.html">Back-ups</a></li>
                       <li><a href="chartjs2.html">Reports</a></li>
