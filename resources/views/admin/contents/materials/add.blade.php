@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>MATERIAL</h3>
+        <h3>MATERIALS</h3>
       </div>
 
            <!--    <div class="title_right">
@@ -48,11 +48,33 @@
                   <div class="x_content">
                     {{ Form::open(array('url' => 'foo/bar', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
                     <!--   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"> -->
+                      <div align="center" id="notif" style="color:red; display:none">Please fill up all the required fields</div>
+                      <br>
+                      <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="container_type" >Container Type:</label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select id="container_type_id" name="container_type_id" class="form-control select2" required>
+                          <option value="">Choose..</option>
+                          <option value="press">Press</option>
+                          <option value="net">Internet</option>
+                          <option value="mouth">Word of mouth</option>
+                        </select>
+                      </div>
+                    </div>
 
                     <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="container_type" >Container Type:</label>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Container Identifier:
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="material_container_desc" style="border-color: #aaa!important;" id="material_container_desc" required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="author_id" >Author/Composer:</label>
                      <div class="col-md-6 col-sm-6 col-xs-12">
-                      <select id="container_type_id" name="container_type_id" class="form-control" required>
+                      <select id="author_id" name="author_id" class="form-control select2" required>
                         <option value="">Choose..</option>
                         <option value="press">Press</option>
                         <option value="net">Internet</option>
@@ -62,18 +84,25 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Container Identifier:<span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_title">Material Title:
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="material_container_desc" id="material_container_desc" required="required" class="form-control col-md-7 col-xs-12">
+                      <input type="text" name="material_title" style="border-color: #aaa!important;" id="material_title" required="required" class="form-control col-md-7 col-xs-12">
                     </div>
                   </div>
 
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_desc">Material Description:
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                  </div>
 
                   <div class="form-group">
-                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="author_id" >Author/Composer:</label>
+                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
                    <div class="col-md-6 col-sm-6 col-xs-12">
-                    <select id="author_id" name="author_id" class="form-control" required>
+                    <select id="subject_id" name="subject_id" class="form-control select2" required>
                       <option value="">Choose..</option>
                       <option value="press">Press</option>
                       <option value="net">Internet</option>
@@ -83,25 +112,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_title">Material Title:<span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" name="material_title" id="material_title" required="required" class="form-control col-md-7 col-xs-12">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_desc">Material Description:<span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" name="material_desc" id="material_desc" required="required" class="form-control col-md-7 col-xs-12">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
+                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_num_copies" >Number of Copies:</label>
                  <div class="col-md-6 col-sm-6 col-xs-12">
-                  <select id="subject_id" name="subject_id" class="form-control" required>
+                  <select id="material_num_copies" name="material_num_copies" class="form-control select2" required>
                     <option value="">Choose..</option>
                     <option value="press">Press</option>
                     <option value="net">Internet</option>
@@ -111,53 +124,43 @@
               </div>
 
               <div class="form-group">
-               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_num_copies" >Number of Copies:</label>
-               <div class="col-md-6 col-sm-6 col-xs-12">
-                <select id="material_num_copies" name="material_num_copies" class="form-control" required>
-                  <option value="">Choose..</option>
-                  <option value="press">Press</option>
-                  <option value="net">Internet</option>
-                  <option value="mouth">Word of mouth</option>
-                </select>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Inclusion Dates:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="material_inclusion_dates" style="border-color: #aaa!important;" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Inclusion Dates:<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_inclusion_dates" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12">
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">Call Number:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="material_call_num" style="border-color: #aaa!important;" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">Call Number:<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_call_num" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">Acc Number:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="material_acc_num" style="border-color: #aaa!important;" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">Acc Number:<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_acc_num" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">
-              </div>
-            </div>
 
               <div class="form-group" align="center">
-               <input type="submit" class="btn btn-round btn-success" value="SAVE">
-            </div>
-           
+               <input type="button" id="btn-submit" class="btn btn-round btn-success" value="SAVE">
+             </div>
 
-          {{ Form::close() }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+
+             {{ Form::close() }}
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ 
 
 
 @stop

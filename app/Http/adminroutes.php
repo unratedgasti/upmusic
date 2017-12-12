@@ -18,9 +18,7 @@ Route::group(['middleware'=>'auth'], function(){
 		return view('admin/contents/dashboard/indexcontent');
 	});
 
-	Route::get('/admin/materials/view', function () {
-		return view('admin/contents/materials/view');
-	});
+	Route::get('/admin/materials/view', 'AdminControllers\MaterialsController@index');  
 
 	Route::get('/admin/materials/add', function () {
 		return view('admin/contents/materials/add');

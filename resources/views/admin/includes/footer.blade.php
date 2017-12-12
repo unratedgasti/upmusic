@@ -29,3 +29,6 @@
 <script type="text/javascript" src="{!! asset('includes/admin/vendors/moment/min/moment.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/admin/vendors/bootstrap-daterangepicker/daterangepicker.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/admin/build/js/custom.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('includes/admin/sweetalert/dist/sweetalert.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('includes/admin/select2/js/select2.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('includes/admin/admin.js') !!}"></script>
