@@ -11,7 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front/contents/dashboard/indexcontent');
+Route::auth();
+Route::group(['middleware'=>'auth'], function(){
+
+	Route::get('/admin/dashboard', function () {
+		return view('admin/contents/dashboard/indexcontent');
+	});
+
+	Route::get('/admin/materials/view', 'AdminControllers\MaterialsController@index');  
+
+	Route::get('/admin/materials/add', function () {
+		return view('admin/contents/materials/add');
+	});
+
 });
+
 

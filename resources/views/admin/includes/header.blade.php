@@ -7,4 +7,6 @@
 <link href="{!! asset('includes/admin/vendors/jqvmap/dist/jqvmap.min.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/admin/vendors/bootstrap-daterangepicker/daterangepicker.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/admin/build/css/custom.min.css') !!}"  rel="stylesheet" type="text/css" />
+<link href="{!! asset('includes/admin/sweetalert/dist/sweetalert.css') !!}" rel='stylesheet' type='text/css'/>
+<link href="{!! asset('includes/admin/select2/css/select2.css') !!}" rel='stylesheet' type='text/css'/>
 

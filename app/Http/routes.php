@@ -14,3 +14,7 @@ include_once 'adminroutes.php';
 include_once 'frontroutes.php';
 
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
