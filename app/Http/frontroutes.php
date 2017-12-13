@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front/contents/dashboard/indexcontent');
-});
+Route::resource('/', 'FrontControllers\SearchController@index');
 
 
 
-Route::post('search', 'FrontControllers\SearchController@searchCode')->name('search.searchCode');
+Route::any('search', 'FrontControllers\SearchController@searchAuthor')->name('search.searchAuthor');
+Route::any('getSubject', 'FrontControllers\SearchController@getSubject')->name('search.getSubject');
