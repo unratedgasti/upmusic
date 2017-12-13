@@ -46,22 +46,24 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    {{ Form::open(array('url' => 'foo/bar', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
+                    {{ Form::open(array('url' => 'admin/materials/store', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
                     <!--   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"> -->
                       <div align="center" id="notif" style="color:red; display:none">Please fill up all the required fields</div>
                       <br>
                       <div class="form-group">
                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="container_type" >Container Type:</label>
                        <div class="col-md-6 col-sm-6 col-xs-12">
+
                         <select id="container_type_id" name="container_type_id" class="form-control select2" required>
-                          <option value="">Choose..</option>
-                          <option value="press">Press</option>
-                          <option value="net">Internet</option>
-                          <option value="mouth">Word of mouth</option>
+                      <option value="">--Please Select--</option>
+                         @foreach($cont_type as $value)
+                        
+                         <option value="{{$value->container_type_id}}">{{$value->container_type_desc}}</option>
+                         @endforeach
                         </select>
                       </div>
                     </div>
-
+  
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Container Identifier:
                       </label>
@@ -75,10 +77,10 @@
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="author_id" >Author/Composer:</label>
                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <select id="author_id" name="author_id" class="form-control select2" required>
-                        <option value="">Choose..</option>
-                        <option value="press">Press</option>
-                        <option value="net">Internet</option>
-                        <option value="mouth">Word of mouth</option>
+                       <option value="">--Please Select--</option>
+                       @foreach($author as $value)                        
+                         <option value="{{$value->author_id}}">{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                         @endforeach
                       </select>
                     </div>
                   </div>

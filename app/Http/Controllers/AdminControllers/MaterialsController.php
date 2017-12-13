@@ -34,9 +34,31 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_form(Request $request)
     {
-        //
+          $cont_type = DB::table('container_type')
+          ->where('is_active', 1)
+          ->get();
+
+          $author = DB::table('author')
+          ->where('is_active', 1)
+          ->get();
+
+          $subject = DB::table('subject')
+          ->where('is_active', 1)
+          ->get();
+
+          $material_category = DB::table('material_category')
+          ->where('is_active', 1)
+          ->get();
+        
+        $data['cont_type']=$cont_type;
+        $data['author']=$author;
+        $data['subject']=$subject;
+        $data['material_category']=$material_category;
+
+        // dd($data);
+        return view('admin.contents.materials.add', $data);
     }
 
     /**
@@ -47,7 +69,7 @@ class MaterialsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        dd($request->all());
     }
 
     /**

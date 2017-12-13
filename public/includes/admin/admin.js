@@ -1,5 +1,4 @@
 $('.select2').select2({
-	placeholder: 'Select an option'
 });
 
 $('#btn-submit').on('click',function(e){
