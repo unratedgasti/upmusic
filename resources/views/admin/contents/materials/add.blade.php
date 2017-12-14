@@ -101,14 +101,26 @@
                     </div>
                   </div>
 
+                   <div class="form-group">
+                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_category_id" >Material Type:</label>
+                   <div class="col-md-6 col-sm-6 col-xs-12">
+                    <select id="material_category_id" name="material_category_id" class="form-control select2" required>
+                    <option value="">--Please Select--</option>
+                      @foreach($material_category as $value)                        
+                         <option value="{{$value->material_category_id}}">{{$value->material_category_desc}} </option>
+                         @endforeach
+                    </select>
+                  </div>
+                </div>
+
                   <div class="form-group">
                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
                    <div class="col-md-6 col-sm-6 col-xs-12">
                     <select id="subject_id" name="subject_id" class="form-control select2" required>
-                      <option value="">Choose..</option>
-                      <option value="press">Press</option>
-                      <option value="net">Internet</option>
-                      <option value="mouth">Word of mouth</option>
+                    <option value="">--Please Select--</option>
+                      @foreach($subject as $value)                        
+                         <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
+                         @endforeach
                     </select>
                   </div>
                 </div>
