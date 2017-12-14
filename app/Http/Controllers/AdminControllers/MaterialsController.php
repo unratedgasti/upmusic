@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use DB;
 
+
 class MaterialsController extends Controller
 {
     /**
@@ -20,11 +21,11 @@ class MaterialsController extends Controller
     {
 
         $materials = DB::table('material')
-         ->join('author', 'material.author_id', '=', 'author.author_id')
-         ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
-         ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
-         ->join('subject', 'material.subject_id', '=', 'subject.subject_id')
-         ->paginate(10);
+        ->join('author', 'material.author_id', '=', 'author.author_id')
+        ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
+        ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
+        ->join('subject', 'material.subject_id', '=', 'subject.subject_id')
+        ->paginate(10);
 
         return view('admin.contents.materials.view', ['materials' => $materials]);
     }
@@ -36,30 +37,30 @@ class MaterialsController extends Controller
      */
     public function create_form(Request $request)
     {
-          $cont_type = DB::table('container_type')
-          ->where('is_active', 1)
-          ->get();
+      $cont_type = DB::table('container_type')
+      ->where('is_active', 1)
+      ->get();
 
-          $author = DB::table('author')
-          ->where('is_active', 1)
-          ->get();
+      $author = DB::table('author')
+      ->where('is_active', 1)
+      ->get();
 
-          $subject = DB::table('subject')
-          ->where('is_active', 1)
-          ->get();
+      $subject = DB::table('subject')
+      ->where('is_active', 1)
+      ->get();
 
-          $material_category = DB::table('material_category')
-          ->where('is_active', 1)
-          ->get();
-        
-        $data['cont_type']=$cont_type;
-        $data['author']=$author;
-        $data['subject']=$subject;
-        $data['material_category']=$material_category;
+      $material_category = DB::table('material_category')
+      ->where('is_active', 1)
+      ->get();
+
+      $data['cont_type']=$cont_type;
+      $data['author']=$author;
+      $data['subject']=$subject;
+      $data['material_category']=$material_category;
 
         // dd($data);
-        return view('admin.contents.materials.add', $data);
-    }
+      return view('admin.contents.materials.add', $data);
+  }
 
     /**
      * Store a newly created resource in storage.
@@ -69,7 +70,34 @@ class MaterialsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $cont_type = DB::table('container_type')
+      ->where('is_active', 1)
+      ->get();
+
+      $author = DB::table('author')
+      ->where('is_active', 1)
+      ->get();
+
+      $subject = DB::table('subject')
+      ->where('is_active', 1)
+      ->get();
+
+      $material_category = DB::table('material_category')
+      ->where('is_active', 1)
+      ->get();
+
+      $data['cont_type']=$cont_type;
+      $data['author']=$author;
+      $data['subject']=$subject;
+      $data['material_category']=$material_category;
+
+        $insertdata=$request->all();
+        unset($insertdata['_token']);
+
+        // DB::table('material')->insert(
+        //     $insertdata);
+        $data['success']='Material Successfully Added';
+         return view('admin.contents.materials.add', $data);
     }
 
     /**
