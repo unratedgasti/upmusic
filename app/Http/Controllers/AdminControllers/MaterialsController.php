@@ -126,8 +126,8 @@ class MaterialsController extends Controller
         $insertdata=$request->all();
         unset($insertdata['_token']);
 
-        // DB::table('material')->insert(
-        //     $insertdata);
+        DB::table('material')->insert(
+            $insertdata);
         $data['success']='Material Successfully Added';
         return view('admin.contents.materials.add', $data);
     }
@@ -160,7 +160,29 @@ class MaterialsController extends Controller
         ->where('material.material_id',$id)
         ->get();
 
-        return view('admin.contents.materials.edit', ['material' => $material_detail[0]]);
+        $cont_type = DB::table('container_type')
+        ->where('is_active', 1)
+        ->get();
+
+        $author = DB::table('author')
+        ->where('is_active', 1)
+        ->get();
+
+        $subject = DB::table('subject')
+        ->where('is_active', 1)
+        ->get();
+
+        $material_category = DB::table('material_category')
+        ->where('is_active', 1)
+        ->get();
+
+        $data['material']=$material_detail[0];
+        $data['cont_type']=$cont_type;
+        $data['author']=$author;
+        $data['subject']=$subject;
+        $data['material_category']=$material_category;
+
+        return view('admin.contents.materials.edit', $data);
         
     }
 
