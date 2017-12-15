@@ -20,21 +20,53 @@ class MaterialsController extends Controller
     public function index()
     {
 
-        $materials = DB::table('material')
+        $material = DB::table('material')
+        ->select('material.*','author.author_firstname','author.author_middlename','author.author_lastname','container_type.container_type_desc','material_category.material_category_desc','subject.subject_desc')
         ->join('author', 'material.author_id', '=', 'author.author_id')
         ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
         ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
-        ->join('subject', 'material.subject_id', '=', 'subject.subject_id')
-        ->paginate(10);
+        ->join('subject', 'material.subject_id', '=', 'subject.subject_id');
+        if ($_GET['list']=='active') {
+         $material->where('material.is_active',1);
+     }
+     if ($_GET['list']=='inactive') {
+         $material->where('material.is_active',0);
+     }
 
-        return view('admin.contents.materials.view', ['materials' => $materials]);
-    }
+     $materials= $material->paginate(10);
+// dd($materials);
+     return view('admin.contents.materials.view', ['materials' => $materials]);
+ }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function change_status()
+    {
+        $id=$_GET['id'];
+        $status=$_GET['status'];
+
+        if($status==1)
+        {
+            DB::table('material')
+            ->where('material_id', $id)
+            ->update(['is_active' => 0]);
+        }
+        else
+        {
+            DB::table('material')
+            ->where('material_id', $id)
+            ->update(['is_active' => 1]);  
+        }
+
+        // return redirect('/admin/materials/view?list='.$_GET['list'].'&response=1');
+             return redirect('/admin/materials/view?list=all&response=1');
+    }
+
+ 
     public function create_form(Request $request)
     {
       $cont_type = DB::table('container_type')
@@ -71,25 +103,25 @@ class MaterialsController extends Controller
     public function store(Request $request)
     {
         $cont_type = DB::table('container_type')
-      ->where('is_active', 1)
-      ->get();
+        ->where('is_active', 1)
+        ->get();
 
-      $author = DB::table('author')
-      ->where('is_active', 1)
-      ->get();
+        $author = DB::table('author')
+        ->where('is_active', 1)
+        ->get();
 
-      $subject = DB::table('subject')
-      ->where('is_active', 1)
-      ->get();
+        $subject = DB::table('subject')
+        ->where('is_active', 1)
+        ->get();
 
-      $material_category = DB::table('material_category')
-      ->where('is_active', 1)
-      ->get();
+        $material_category = DB::table('material_category')
+        ->where('is_active', 1)
+        ->get();
 
-      $data['cont_type']=$cont_type;
-      $data['author']=$author;
-      $data['subject']=$subject;
-      $data['material_category']=$material_category;
+        $data['cont_type']=$cont_type;
+        $data['author']=$author;
+        $data['subject']=$subject;
+        $data['material_category']=$material_category;
 
         $insertdata=$request->all();
         unset($insertdata['_token']);
@@ -97,7 +129,7 @@ class MaterialsController extends Controller
         // DB::table('material')->insert(
         //     $insertdata);
         $data['success']='Material Successfully Added';
-         return view('admin.contents.materials.add', $data);
+        return view('admin.contents.materials.add', $data);
     }
 
     /**
@@ -119,7 +151,17 @@ class MaterialsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $material_detail = DB::table('material')
+        ->select('material.*','author.author_firstname','author.author_middlename','author.author_lastname','container_type.container_type_id','material_category.material_category_id','subject.subject_id')
+        ->join('author', 'material.author_id', '=', 'author.author_id')
+        ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
+        ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
+        ->join('subject', 'material.subject_id', '=', 'subject.subject_id')
+        ->where('material.material_id',$id)
+        ->get();
+
+        return view('admin.contents.materials.edit', ['material' => $material_detail[0]]);
+        
     }
 
     /**

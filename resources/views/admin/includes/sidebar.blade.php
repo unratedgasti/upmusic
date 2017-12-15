@@ -60,7 +60,7 @@
                   </li>
                    <li class="{{ ($active_url == 'materials' ? 'active' : '') }}"><a><i class="fa fa-edit"></i> Materials <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{URL::to('/admin/materials/view')}}">View All Materials</a></li>
+                      <li><a href="{{URL::to('/admin/materials/view?list=all')}}">View All Materials</a></li>
                       <li><a href="{{URL::to('/admin/materials/add')}}">Add New Materials</a></li>
                       <!-- <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
