@@ -27,12 +27,13 @@
 
 
 
-    <body class="login">
-        
+    <body class="login" style="background-color: white;min-height: 100%">
+      
+    <div>
        @yield('indexcontent')
 
      @include('front.includes.footer')
-
+</div>
 
     </body>
 

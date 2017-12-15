@@ -1,15 +1,29 @@
 
 <style type="text/css">
-	.select2-selection__arrow{
-		display: none
-	}
-	..js-example-basic-single{
-		width: 100%
-	}
-	.select2{
-		width: 100%
-	}
+.select2-selection__arrow{
+	display: none
 }
+..js-example-basic-single{
+	width: 100%
+}
+.select2{
+	width: 100%
+}
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	color: white;
+	text-align: center;
+}
+
+
 </style>
 <link href="{!! asset('includes/front/vendors/bootstrap/dist/css/bootstrap.min.css') !!}"  rel="stylesheet" type="text/css" />
 

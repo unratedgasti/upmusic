@@ -90,17 +90,43 @@ class SearchController extends Controller
 
     }
     public function searchAuthor(Request $request){
+            if($request->type == 'advance'){
+                
+                  $query = DB::table('material')
+                    ->select('*')
+                    ->join('author','material.author_id','=','author.author_id')
+                    ->join('container_type','material.container_type_id','=','container_type.container_type_id');
+                    if($request->search_author_ad){
+                        $query->where('material.author_id','=', $request->search_author_ad);
+                    }
+                    if($request->title){
+                        $query->where('material.material_title','like','%'. $request->title.'%');
+                 }
+                 if($request->search_sub){
+                    $query->where('material.subject_id','=', $request->search_sub);
+                }
+                   $material =  $query->paginate(10);
+              
+            }else{
         $material = DB::table('material')
                     ->select('*')
                     ->join('author','material.author_id','=','author.author_id')
                     ->join('container_type','material.container_type_id','=','container_type.container_type_id')
-                    ->paginate(1);
+                    ->where('material.author_id', $request->search_author)
+                    ->paginate(10);
+            }
          $author = DB::table('author')->select('*')->get();
-        /*return $request->author;*/
         return view('front.contents.search.indexcontent',array('material'=>$material,'author'=>$author));
     }
 
     public function getSubject(Request $request){
-        return $request->author;
+
+         $subject = DB::table('material')
+                    ->select('subject.*')
+                    ->join('author','material.author_id','=','author.author_id')
+                    ->join('subject','material.subject_id','=','subject.subject_id')
+                    ->where('material.author_id',$request->author)
+                    ->get();
+        return $subject;
     }
 }

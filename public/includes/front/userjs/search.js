@@ -27,12 +27,10 @@
 
 
 $('#search_author_ad').on('change',function(){
-		
-		alert($(this).val());
-	if($(this).val()){
+	if(!$(this).val()){
 	}else{
 
-				$.ajax({
+			$.ajax({
 			type:"POST",
 			url:$('#methodroute').val(),
 			data:{author:$(this).val(),'_token':$('meta[name="csrf-token"]').attr('content')},
@@ -40,12 +38,21 @@ $('#search_author_ad').on('change',function(){
 
 			},
 			success:function(data){
-				alert(data);
+				$('#search_sub').html('');
+				var dataoption;
+				 dataoption = "";
+				 dataoption += ' <option value="" selected="">Select Something</option>';
+				$.each(data,function(index,val){
+					console.log(val);
+					dataoption += ' <option value="'+val.subject_id+'" >'+val.subject_desc+'</option>';
+				});
+				$('#search_sub').html(dataoption);
 			}
 
 		});
 	}
-})
+
+});
 
 
 $('#advance').on('click',function(e){

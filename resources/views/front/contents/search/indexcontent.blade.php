@@ -1,5 +1,6 @@
 @extends('front.index')
-@section('indexcontent')   
+@section('indexcontent')  
+@include('front.includes.topnav') 
  <div class="login_wrapper" id="searchnorm">
     
       <section class="login_content" >
@@ -21,8 +22,6 @@
               @endforeach
             </select>
           </div>
-       
-          {!! Form::hidden('methodroute', route('search.searchAuthor'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
           </div>
   
 
@@ -58,18 +57,16 @@
                 <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
               @endforeach
             </select><br><br>
-
+            {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
               {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
 
              <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
               <option value="" selected="">Select Something</option>
-              @foreach($author as $value)
-                <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
-              @endforeach
+         
             </select><br><br>
         
           </div>
-          {!! Form::hidden('methodroute', route('search.searchAuthor'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
+          {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
               <div align="center"><br>
                 <button class="btn btn-md btn-success" id="search_code_button"  >Search</button>
             </div>
@@ -89,7 +86,6 @@
 
 <div class="col-md-10 col-md-offset-1">
   
-
 <div class="x_content">
   <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">

@@ -33,9 +33,9 @@
 	});
 </script>
 <script type="text/javascript" src="{!! asset('includes/front/userjs/search.js') !!}"></script>
-<div class="row">
-	
-	<div class="col-md-12" align="center">
-		<p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-	</div>
-</div>
+ <div class="footer" style="background-color:  #404040;">
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </div>
