@@ -26,14 +26,21 @@
 	</head>
 
 
-
-    <body class="login" style="background-color: white;min-height: 100%">
-      
-    <div>
+  <body class="nav-md" style="background-color: white;width: 100%">
+    <div class="container body">
+      <div class="main_container">
+     
        @yield('indexcontent')
 
-     @include('front.includes.footer')
+       <br>
+<br>
+<br>
+<br> 
+ </div>     
 </div>
+ <div class="clearfix"></div>
+     @include('front.includes.footer')
+
 
     </body>
 
