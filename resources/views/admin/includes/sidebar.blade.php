@@ -10,6 +10,7 @@
           $url=Request::getPathInfo();
           $segment=explode("/",$url);
           $active_url=$segment[2];
+
           
           ?>
           <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? '../includes/admin/images/upcmulogo2.png' : '../../includes/admin/images/upcmulogo2.png') }}" style="width:20%;"></a>
@@ -59,7 +60,7 @@
                     </ul> -->
                   </li>
                    <li class="{{ ($active_url == 'materials' ? 'active' : '') }}"><a><i class="fa fa-edit"></i> Materials <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'materials' ? 'block' : '') }};">
                       <li><a href="{{URL::to('/admin/materials/view?list=all')}}">View All Materials</a></li>
                       <li><a href="{{URL::to('/admin/materials/add')}}">Add New Materials</a></li>
                       <!-- <li><a href="form_validation.html">Form Validation</a></li>
@@ -69,7 +70,7 @@
                     </ul>
                   </li>
                   <li class="{{ ($active_url == 'authors' ? 'active' : '') }}"><a><i class="fa fa-user"></i> Authors <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'authors' ? 'block' : '') }};">
                       <li><a href="index.html">View All Authors</a></li>
                       <li><a href="index2.html">Add New Author</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
@@ -77,7 +78,7 @@
                   </li>
                  
                   <li class="{{ ($active_url == 'subjects' ? 'active' : '') }}"><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'subjects' ? 'block' : '') }};">
                       <li><a href="general_elements.html">View All Subjects</a></li>
                       <li><a href="media_gallery.html">Add New Subjects</a></li>
                      <!--  <li><a href="typography.html">Typography</a></li>
@@ -90,13 +91,13 @@
                     </ul>
                   </li>
                   <li class="{{ ($active_url == 'containertype' ? 'active' : '') }}"><a><i class="fa fa-table"></i> Container Types <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'containertype' ? 'block' : '') }};">
                       <li><a href="tables.html">View All Container Types</a></li>
                       <li><a href="tables_dynamic.html">Add New Container Types</a></li>
                     </ul>
                   </li>
                   <li class="{{ ($active_url == 'materialcategories' ? 'active' : '') }}"><a><i class="fa fa-bar-chart-o"></i> Material Categories <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'materialcategories' ? 'block' : '') }};">
                       <li><a href="chartjs.html">View All Material Categories</a></li>
                       <li><a href="chartjs2.html">Add New Material Categories</a></li>
                      <!--  <li><a href="morisjs.html">Moris JS</a></li>
@@ -105,7 +106,7 @@
                     </ul>
                   </li>
                    <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu" style="display:{{ ($active_url == 'backupreports' ? 'block' : '') }};">
                       <li><a href="chartjs.html">Back-ups</a></li>
                       <li><a href="chartjs2.html">Reports</a></li>
                      <!--  <li><a href="morisjs.html">Moris JS</a></li>

@@ -34,11 +34,11 @@ if(valid==1)
 {
 	swal({
 		title: "Are you sure?",
-		text: "You will not be able to recover this imaginary file!",
+		text: "Record will be added/updated",
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: "#DD6B55",
-		confirmButtonText: "Yes, delete it!",
+		confirmButtonText: "Yes, Save it!",
 		closeOnConfirm: false
 	}, function(isConfirm){
 		if (isConfirm) form.submit();

@@ -69,9 +69,9 @@
                   </div>
                   <div class="x_content">
 
-                    <div class="table-responsive">
+                    <div class="table-responsive"  style="overflow-x: auto; width:100%;padding-bottom:20px" >
                       <!-- <table class="table table-striped jambo_table bulk_action"> -->
-                      <table class="table jambo_table table-bordered">
+                      <table class="table jambo_table table-bordered rable-responsive" style="padding-bottom:20px">
                         <thead>
                       <!--     <tr class="headings">
                             <th>
@@ -80,7 +80,7 @@
                             <th class="column-title" style="text-align: center!important;">Actions</th>
                             <th class="column-title" style="text-align: center!important;">Container Type</th>
                             <th class="column-title" style="text-align: center!important;">Container Identifier</th>
-                            <th class="column-title" style="text-align: center!important;">Author Name </th>
+                            <th class="column-title" style="text-align: center!important; white-space: nowrap;">Author Name </th>
                             <th class="column-title" style="text-align: center!important;">Category</th>
                             <th class="column-title" style="text-align: center!important;">Title</th>
                             <th class="column-title" style="text-align: center!important;">Description</th>
@@ -104,7 +104,7 @@
                               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-round btn-xs" type="button" aria-expanded="false">Actions <span class="caret"></span>
                               </button>
                               <ul role="menu" class="dropdown-menu">
-                              <li><a href="{{URL::to('/admin/materials/edit/'.$material->material_id)}}">Edit</a>
+                             <li><a href="{{URL::to('/admin/materials/edit?id='.$material->material_id)}}">Edit</a>
                                 </li>
                               </li>
                               <li><a href="{{URL::to('/admin/materials/changestatus?list=active&id='.$material->material_id.'&status=1')}}">Deactivate</a>
@@ -119,7 +119,7 @@
                           </td> 
                           <td class=" ">{{$material->container_type_desc}}</td>
                           <td class=" ">{{$material->material_container_desc}}</td>
-                          <td class=" ">{{$material->author_firstname}} {{$material->author_middlename}} {{$material->author_lastname}}</td>
+                          <td class=" " style="white-space: nowrap;">{{$material->author_firstname}} {{$material->author_middlename}} {{$material->author_lastname}}</td>
                           <td class=" ">{{$material->material_category_desc}}</td>
                           <td class=" ">{{$material->material_title}}</td>
                           <td class=" ">{{$material->material_desc}}</td>
@@ -135,7 +135,7 @@
                               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-round btn-xs" type="button" aria-expanded="false">Actions <span class="caret"></span>
                               </button>
                               <ul role="menu" class="dropdown-menu">
-                                <li><a href="{{URL::to('/admin/materials/edit/'.$material->material_id)}}">Edit</a>
+                                <li><a href="{{URL::to('/admin/materials/edit?id='.$material->material_id)}}">Edit</a>
                                 </li>
                                 <li><a href="{{URL::to('/admin/materials/changestatus?list=active&id='.$material->material_id.'&status=0')}}">Activate</a>
                                 </li>

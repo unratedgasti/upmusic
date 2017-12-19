@@ -27,7 +27,8 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Add New</h2>
+                    <h2>Edit</h2>
+                    
                    <!--  <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -43,6 +44,8 @@
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul> -->
+
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -67,7 +70,7 @@
                     <select id="container_type_id" name="container_type_id" class="form-control select2" required>
                       <option value="">--Please Select--</option>
                       @foreach($cont_type as $value)                      
-                      <option value="{{$value->container_type_id}}">{{$value->container_type_desc}}</option>
+                      <option value="{{$value->container_type_id}}" selected="{{ ($material->material_id == $value->container_type_id ? 'true' : 'false') }}">{{$value->container_type_desc}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -77,7 +80,7 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Container Identifier:
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" name="material_container_desc" style="border-color: #aaa!important;" id="material_container_desc" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text" name="material_container_desc" style="border-color: #aaa!important;" id="material_container_desc" required="required" value="{{$material->material_container_desc}}" class="form-control col-md-7 col-xs-12">
                   </div>
                 </div>
 
@@ -88,7 +91,7 @@
                   <select id="author_id" name="author_id" class="form-control select2" required>
                    <option value="">--Please Select--</option>
                    @foreach($author as $value)                        
-                   <option value="{{$value->author_id}}">{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                   <option value="{{$value->author_id}}" selected="{{ ($material->author_id == $value->author_id ? 'true' : 'false') }}">{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
                    @endforeach
                  </select>
                </div>
@@ -98,15 +101,15 @@
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_title">Material Title:
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_title" style="border-color: #aaa!important;" id="material_title" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="text" name="material_title" value="{{$material->material_title}}" style="border-color: #aaa!important;" id="material_title" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_desc">Material Description:
               </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12">
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                <textarea name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12" rows='3'>{{$material->material_desc}}</textarea>
               </div>
             </div>
 
@@ -116,16 +119,18 @@
               <select id="material_category_id" name="material_category_id" class="form-control select2" required>
                 <option value="">--Please Select--</option>
                 @foreach($material_category as $value)                        
-                <option value="{{$value->material_category_id}}">{{$value->material_category_desc}} </option>
+                <option value="{{$value->material_category_id}}" selected="{{ ($material->material_category_id == $value->material_category_id ? 'true' : 'false') }}">{{$value->material_category_desc}} </option>
                 @endforeach
               </select>
             </div>
           </div>
+          
+          @if($material->subject_id==0)
 
           <div class="form-group">
            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
            <div class="col-md-6 col-sm-6 col-xs-12">
-            <select id="subject_id" name="subject_id" class="form-control select2" required>
+            <select id="subject_id" name="subject_id" class="form-control select2">
               <option value="">--Please Select--</option>
               @foreach($subject as $value)                        
               <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
@@ -133,47 +138,60 @@
             </select>
           </div>
         </div>
+        @else
+          <div class="form-group">
+           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
+           <div class="col-md-6 col-sm-6 col-xs-12">
+            <select id="subject_id" name="subject_id" class="form-control select2">
+              <option value="">--Please Select--</option>
+              @foreach($subject as $value)                        
+              <option value="{{$value->subject_id}}" selected="{{ ($material->subject_id == $value->subject_id ? 'true' : 'false') }}">{{$value->subject_desc}} </option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+        @endif
 
         <div class="form-group">
          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_num_copies" >Number of Copies:</label>
          <div class="col-md-6 col-sm-6 col-xs-12">
           <select id="material_num_copies" name="material_num_copies" class="form-control select2" required>
             <option value="">--Please Select--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+            <option value="1" selected="{{ ($material->material_num_copies == 1 ? 'true' : 'false') }}">1</option>
+            <option value="2" selected="{{ ($material->material_num_copies == 2 ? 'true' : 'false') }}">2</option>
+            <option value="3" selected="{{ ($material->material_num_copies == 3 ? 'true' : 'false') }}">3</option>
+            <option value="4" selected="{{ ($material->material_num_copies == 4 ? 'true' : 'false') }}">4</option>
+            <option value="5" selected="{{ ($material->material_num_copies == 5 ? 'true' : 'false') }}">5</option>
+            <option value="6" selected="{{ ($material->material_num_copies == 6 ? 'true' : 'false') }}">6</option>
+            <option value="7" selected="{{ ($material->material_num_copies == 7 ? 'true' : 'false') }}">7</option>
+            <option value="8" selected="{{ ($material->material_num_copies == 8 ? 'true' : 'false') }}">8</option>
+            <option value="9" selected="{{ ($material->material_num_copies == 9 ? 'true' : 'false') }}">9</option>
+            <option value="10" selected="{{ ($material->material_num_copies == 10 ? 'true' : 'false') }}">10</option>
           </select>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Inclusion Dates:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Dates:
         </label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" name="material_inclusion_dates" style="border-color: #aaa!important;" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12">
+         <div class="col-md-6 col-sm-6 col-xs-12">
+          <textarea name="material_inclusion_dates" style="border-color: #aaa!important;" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12" rows='3'>{{$material->material_inclusion_dates}}</textarea>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">Call Number:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">CALL Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" name="material_call_num" style="border-color: #aaa!important;" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
+          <input type="text" name="material_call_num" value="{{$material->material_call_num}}" style="border-color: #aaa!important;" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">Acc Number:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">ACC Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" name="material_acc_num" style="border-color: #aaa!important;" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">
+          <input type="text" name="material_acc_num" value="{{$material->material_acc_num}}" style="border-color: #aaa!important;" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">
         </div>
       </div>
 

@@ -25,7 +25,7 @@ class MaterialsController extends Controller
         ->join('author', 'material.author_id', '=', 'author.author_id')
         ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
         ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
-        ->join('subject', 'material.subject_id', '=', 'subject.subject_id');
+        ->leftjoin('subject', 'material.subject_id', '=', 'subject.subject_id');
         if ($_GET['list']=='active') {
          $material->where('material.is_active',1);
      }
@@ -149,15 +149,15 @@ class MaterialsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         $material_detail = DB::table('material')
-        ->select('material.*','author.author_firstname','author.author_middlename','author.author_lastname','container_type.container_type_id','material_category.material_category_id','subject.subject_id')
+        ->select('material.*','author.author_firstname','author.author_middlename','author.author_lastname','container_type.container_type_id','material_category.material_category_id')
         ->join('author', 'material.author_id', '=', 'author.author_id')
         ->join('container_type', 'material.container_type_id', '=', 'container_type.container_type_id')
         ->join('material_category', 'material.material_category_id', '=', 'material_category.material_category_id')
-        ->join('subject', 'material.subject_id', '=', 'subject.subject_id')
-        ->where('material.material_id',$id)
+        ->leftjoin('subject', 'material.subject_id', '=', 'subject.subject_id')
+        ->where('material.material_id',$_GET['id'])
         ->get();
 
         $cont_type = DB::table('container_type')

@@ -106,8 +106,9 @@
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_desc">Material Description:
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12">
+                <textarea name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12" rows='3'></textarea>
               </div>
+
             </div>
 
             <div class="form-group">
@@ -125,7 +126,7 @@
           <div class="form-group">
            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
            <div class="col-md-6 col-sm-6 col-xs-12">
-            <select id="subject_id" name="subject_id" class="form-control select2" required>
+            <select id="subject_id" name="subject_id" class="form-control select2" >
               <option value="">--Please Select--</option>
               @foreach($subject as $value)                        
               <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
@@ -154,15 +155,15 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Inclusion Dates:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Dates:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" name="material_inclusion_dates" style="border-color: #aaa!important;" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12">
+          <textarea name="material_inclusion_dates" style="border-color: #aaa!important;" id="material_inclusion_dates" required="required" class="form-control col-md-7 col-xs-12" rows='3'></textarea>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">Call Number:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">CALL Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" name="material_call_num" style="border-color: #aaa!important;" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
@@ -170,7 +171,7 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">Acc Number:
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">ACC Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" name="material_acc_num" style="border-color: #aaa!important;" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">

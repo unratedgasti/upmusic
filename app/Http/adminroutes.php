@@ -23,7 +23,7 @@ Route::group(['middleware'=>'auth'], function(){
 
 	Route::get('/admin/materials/view', 'AdminControllers\MaterialsController@index');	
 	Route::get('/admin/materials/add', 'AdminControllers\MaterialsController@create_form');
-	Route::get('/admin/materials/edit/{id}', 'AdminControllers\MaterialsController@edit');
+	Route::get('/admin/materials/edit', 'AdminControllers\MaterialsController@edit');
 	Route::get('/admin/materials/changestatus', 'AdminControllers\MaterialsController@change_status');
 
 		
