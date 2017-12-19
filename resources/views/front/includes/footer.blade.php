@@ -16,7 +16,6 @@
 <script type="text/javascript" src="{!! asset('includes/front/vendors/Flot/jquery.flot.resize.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/front/vendors/flot.orderbars/js/jquery.flot.orderBars.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/front/vendors/flot-spline/js/jquery.flot.spline.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('includes/front/vendors/flot. alcurvedlines/curvedLines.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/front/vendors/DateJS/build/date.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/front/vendors/jqvmap/dist/jquery.vmap.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/front/vendors/jqvmap/dist/maps/jquery.vmap.world.js') !!}"></script>
@@ -33,9 +32,11 @@
 	});
 </script>
 <script type="text/javascript" src="{!! asset('includes/front/userjs/search.js') !!}"></script>
- <div class="footer" style="background-color:  #404040;">
+ <div class="row">
+    <footer class="col-md-12" id="footer" style="background-color:  #404040;margin-left: 1.5% !important;width: 98.5%">
           <div class="pull-right">
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
-          <div class="clearfix"></div>
-        </div>
+         
+        </footer>
+ </div>

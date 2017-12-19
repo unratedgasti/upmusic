@@ -1,4 +1,27 @@
-           <div class="top_nav" >
+       <style type="text/css">
+         #container {
+    width:100%;
+    text-align:center;
+    padding: 5%
+}
+
+#left {
+    float:left;
+    width: 10%;
+}
+
+#center {
+    display: inline-block;
+    margin:0 auto;
+    width:50%;
+}
+
+#right {
+    float:right;
+    width:10%;
+}
+       </style>
+           <div class="top_nav"  style="background-color:  #404040;margin-left: 1.5% !important;width: 98.5%">
         <div class="nav_menu" style="background-color:  #404040;border: none">
           <nav >
 
@@ -15,14 +38,14 @@
           </nav>
         </div>
       </div>
-      <div class="row" style="margin-bottom: -70px">
-        <div class="col-lg-3">
-          <img src="{{asset('includes/front/images/uplogo.png')}}" width="50%" style="padding: 3%">
+       <div id="container">
+          <div id="left">
+          <img src="{{asset('includes/front/images/uplogo.png')}}" width="100%"  class="img-responsive">
         </div>
-        <div class="col-md-6" align="center" style="vertical-align: middle;">
+        <div id="center" align="center" >
           <h1>College of Music</h1>
         </div>
-        <div class="col-lg-3" >
-          <img src="{{asset('includes/front/images/upcom.png')}}" width="50%" style="padding: 3%;float: right;padding: 3%">
+        <div id="right" >
+          <img src="{{asset('includes/front/images/upcom.png')}}" width="100%" class="img-responsive">
         </div>
-      </div>
+       </div>

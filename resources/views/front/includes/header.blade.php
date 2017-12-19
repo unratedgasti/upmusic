@@ -1,5 +1,7 @@
 
 <style type="text/css">
+
+
 .select2-selection__arrow{
 	display: none
 }
@@ -9,18 +11,19 @@
 .select2{
 	width: 100%
 }
+
+
 html {
-	height: 100%;
-	box-sizing: border-box;
+    position: relative;
+    min-height: 100%;
 }
-.footer {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 1rem;
-	color: white;
-	text-align: center;
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 
@@ -33,7 +36,6 @@ html {
 <link href="{!! asset('includes/front/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/front/vendors/jqvmap/dist/jqvmap.min.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/front/vendors/bootstrap-daterangepicker/daterangepicker.css') !!}"  rel="stylesheet" type="text/css" />
-<link href="{!! asset('includes/front/build/css/custom.min.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/front/build/css/custom.min.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/front/vendors/nprogress/nprogress.css') !!}"  rel="stylesheet" type="text/css" />
 <link href="{!! asset('includes/front/vendors/animate.css/animate.min.css') !!}"  rel="stylesheet" type="text/css" />

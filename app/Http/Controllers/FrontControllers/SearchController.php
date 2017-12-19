@@ -95,7 +95,9 @@ class SearchController extends Controller
                   $query = DB::table('material')
                     ->select('*')
                     ->join('author','material.author_id','=','author.author_id')
-                    ->join('container_type','material.container_type_id','=','container_type.container_type_id');
+                    ->join('container_type','material.container_type_id','=','container_type.container_type_id')
+                    ->join('material_category','material.material_category_id','=','material_category.material_category_id')
+                    ->join('subject','material.subject_id','=','subject.subject_id');
                     if($request->search_author_ad){
                         $query->where('material.author_id','=', $request->search_author_ad);
                     }
@@ -110,9 +112,10 @@ class SearchController extends Controller
             }else{
         $material = DB::table('material')
                     ->select('*')
-                    ->join('author','material.author_id','=','author.author_id')
-                    ->join('container_type','material.container_type_id','=','container_type.container_type_id')
-                    ->where('material.author_id', $request->search_author)
+                    ->leftjoin('author','material.author_id','=','author.author_id')
+                    ->leftjoin('container_type','material.container_type_id','=','container_type.container_type_id')
+                    ->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')
+                    ->leftjoin('subject','material.subject_id','=','subject.subject_id')
                     ->paginate(10);
             }
          $author = DB::table('author')->select('*')->get();
