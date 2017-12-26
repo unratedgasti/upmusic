@@ -30,6 +30,27 @@
 	$(document).ready(function() {
 		$('.js-example-basic-single').select2({autoClose:true,width:'100%'});
 	});
+
+	$(function() {
+
+    var $sidebar   = $("#sidebar"), 
+        $window    = $(window),
+        offset     = $sidebar.offset(),
+        topPadding = 15;
+
+    $window.scroll(function() {
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+                marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $sidebar.stop().animate({
+                marginTop: 0
+            });
+        }
+    });
+    
+});
 </script>
 <script type="text/javascript" src="{!! asset('includes/front/userjs/search.js') !!}"></script>
  <div class="row">

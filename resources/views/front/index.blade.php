@@ -38,7 +38,9 @@
 <br> 
  </div>     
 </div>
- <div class="clearfix"></div>
+ <div class="clearfix"></div><br>
+<br><br>
+
      @include('front.includes.footer')
 
 
