@@ -5,6 +5,7 @@
 </div>
 <div class="clearfix"></div>
 </footer>
+
 <script type="text/javascript" src="{!! asset('includes/admin/vendors/jquery/dist/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/admin/vendors/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('includes/admin/vendors/fastclick/lib/fastclick.js') !!}"></script>

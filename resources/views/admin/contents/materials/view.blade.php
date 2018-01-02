@@ -26,9 +26,10 @@
       <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
+            <input type="text" class="form-control" id="search" name="search" placeholder="Search for..." value="{{ isset($_GET['q']) ? $_GET['q'] : '' }}">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
+              <button class="btn btn-default" id="search_btn" type="button">Go!</button>
+             <!--  <a class="btn btn-default" href=""  style="padding: 10px 18px !important;">Go!</a> -->
             </span>
           </div>
         </div>
@@ -171,5 +172,15 @@
       </div>
     </div>
 
+<script type="text/javascript">
+  
+    $('#search_btn').click(function(){
+      keyword = $('#search').val();        
+      location.href = "view?list=all&q="+keyword;
+    });
+
+
+ 
+</script>
 
     @stop
