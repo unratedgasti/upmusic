@@ -58,7 +58,7 @@
                   </div>                    
                   @endif
 
-                  {{ Form::open(array('url' => 'admin/materials/store', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
+                  {{ Form::open(array('url' => 'admin/materials/update/'.$material->material_id, 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
 
                   <!--   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"> -->
                   <div align="center" id="notif" style="color:red; display:none">Please fill up all the required fields</div>
@@ -69,8 +69,12 @@
 
                     <select id="container_type_id" name="container_type_id" class="form-control select2" required>
                       <option value="">--Please Select--</option>
-                      @foreach($cont_type as $value)                      
-                      <option value="{{$value->container_type_id}}" selected="{{ ($material->material_id == $value->container_type_id ? 'true' : 'false') }}">{{$value->container_type_desc}}</option>
+                      @foreach($cont_type as $value)
+                      @if($material->container_type_id == $value->container_type_id)                      
+                      <option value="{{$value->container_type_id}}" selected >{{$value->container_type_desc}}</option>
+                      @else
+                      <option value="{{$value->container_type_id}}" >{{$value->container_type_desc}}</option>
+                      @endif
                       @endforeach
                     </select>
                   </div>
@@ -90,8 +94,13 @@
                  <div class="col-md-6 col-sm-6 col-xs-12">
                   <select id="author_id" name="author_id" class="form-control select2" required>
                    <option value="">--Please Select--</option>
-                   @foreach($author as $value)                        
-                   <option value="{{$value->author_id}}" selected="{{ ($material->author_id == $value->author_id ? 'true' : 'false') }}">{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                   @foreach($author as $value)  
+                     @if($material->author_id == $value->author_id)                      
+                      <option value="{{$value->author_id}}" selected>{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                      @else
+                       <option value="{{$value->author_id}}" >{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                      @endif                      
+                   
                    @endforeach
                  </select>
                </div>
@@ -114,12 +123,17 @@
             </div>
 
             <div class="form-group">
-             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_category_id" >Material Type:</label>
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_category_id" >Material Category:</label>
              <div class="col-md-6 col-sm-6 col-xs-12">
               <select id="material_category_id" name="material_category_id" class="form-control select2" required>
                 <option value="">--Please Select--</option>
-                @foreach($material_category as $value)                        
-                <option value="{{$value->material_category_id}}" selected="{{ ($material->material_category_id == $value->material_category_id ? 'true' : 'false') }}">{{$value->material_category_desc}} </option>
+                @foreach($material_category as $value)
+                @if($material->material_category_id == $value->material_category_id )                      
+                       <option value="{{$value->material_category_id}}" selected>{{$value->material_category_desc}} </option>
+                      @else
+                       <option value="{{$value->material_category_id}}" >{{$value->material_category_desc}} </option>
+                      @endif                         
+               
                 @endforeach
               </select>
             </div>
@@ -139,13 +153,17 @@
           </div>
         </div>
         @else
-          <div class="form-group">
+           <div class="form-group">
            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
            <div class="col-md-6 col-sm-6 col-xs-12">
             <select id="subject_id" name="subject_id" class="form-control select2">
               <option value="">--Please Select--</option>
-              @foreach($subject as $value)                        
-              <option value="{{$value->subject_id}}" selected="{{ ($material->subject_id == $value->subject_id ? 'true' : 'false') }}">{{$value->subject_desc}} </option>
+              @foreach($subject as $value) 
+              @if($material->subject_id == $value->subject_id )                      
+               <option value="{{$value->subject_id}}" selected>{{$value->subject_desc}} </option>
+              @else
+               <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
+              @endif                         
               @endforeach
             </select>
           </div>

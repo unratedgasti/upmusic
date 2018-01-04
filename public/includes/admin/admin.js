@@ -30,18 +30,24 @@ $('#btn-submit').on('click',function(e){
 		}
 		
 	});
-if(valid==1)
-{
-	swal({
-		title: "Are you sure?",
-		text: "Record will be added/updated",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#DD6B55",
-		confirmButtonText: "Yes, Save it!",
-		closeOnConfirm: false
-	}, function(isConfirm){
-		if (isConfirm) form.submit();
-	});
-}
+	if(valid==1)
+	{
+		swal({
+			title: "Are you sure?",
+			text: "Record will be added/updated",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			confirmButtonText: "Yes, Save it!",
+			closeOnConfirm: false
+		}, function(isConfirm){
+			if (isConfirm) form.submit();
+		});
+	}
+});
+
+
+$('#search_btn_materials').click(function(){
+	keyword = $('#search').val();        
+	location.href = "view?list=all&q="+keyword;
 });

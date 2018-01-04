@@ -112,7 +112,7 @@
             </div>
 
             <div class="form-group">
-             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_category_id" >Material Type:</label>
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_category_id" >Material Category:</label>
              <div class="col-md-6 col-sm-6 col-xs-12">
               <select id="material_category_id" name="material_category_id" class="form-control select2" required>
                 <option value="">--Please Select--</option>

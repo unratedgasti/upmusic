@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>MATERIALS</h3>
+        <h3>Authors</h3>
 
         <div class="btn-group" style="padding-bottom:10px;">
           <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button" aria-expanded="false">Filter List <span class="caret"></span>
@@ -28,7 +28,7 @@
           <div class="input-group">
             <input type="text" class="form-control" id="search" name="search" placeholder="Search for..." value="{{ isset($_GET['q']) ? $_GET['q'] : '' }}">
             <span class="input-group-btn">
-              <button class="btn btn-default" id="search_btn_materials" type="button">Go!</button>
+              <button class="btn btn-default" id="search_btn_authors" type="button">Go!</button>
              <!--  <a class="btn btn-default" href=""  style="padding: 10px 18px !important;">Go!</a> -->
             </span>
           </div>
@@ -39,7 +39,7 @@
     <div class="clearfix"></div>
     @if(isset($_GET['response']))
     <div class="alert alert-success alert-dismissible " role="alert">
-     <strong>Material Successfully Updated!</strong>
+     <strong>Author Successfully Updated!</strong>
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -79,16 +79,9 @@
                               <input type="checkbox" id="check-all" class="flat">
                             </th> -->
                             <th class="column-title" style="text-align: center!important;">Actions</th>
-                            <th class="column-title" style="text-align: center!important;">Container Type</th>
-                            <th class="column-title" style="text-align: center!important;">Container Identifier</th>
-                            <th class="column-title" style="text-align: center!important; white-space: nowrap;">Author Name </th>
-                            <th class="column-title" style="text-align: center!important;">Category</th>
-                            <th class="column-title" style="text-align: center!important;">Title</th>
-                            <th class="column-title" style="text-align: center!important;">Description</th>
-                            <th class="column-title" style="text-align: center!important;">No . of Copies</th>
-                            <th class="column-title" style="text-align: center!important;">Inclusion Dates</th>
-                            <th class="column-title" style="text-align: center!important;">Call Number</th>
-                            <th class="column-title" style="text-align: center!important;">Acc Number</th>                   
+                            <th class="column-title" style="text-align: center!important;">First Name</th>
+                            <th class="column-title" style="text-align: center!important;">Middle Name</th>
+                            <th class="column-title" style="text-align: center!important;">Last Name </th>                  
                             <!-- <th class="column-title no-link last"><span class="nobr">Action</span>
                           </th> -->
                           <!--   <th class="bulk-actions" colspan="7">

@@ -28,6 +28,7 @@ Route::group(['middleware'=>'auth'], function(){
 
 		
 	Route::post('/admin/materials/store', 'AdminControllers\MaterialsController@store'); 
+	Route::post('/admin/materials/update/{id}', 'AdminControllers\MaterialsController@update'); 
 
 	
 });
