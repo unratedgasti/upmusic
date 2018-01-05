@@ -16,7 +16,28 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-        //
+       
+        $authors = DB::table('author')
+        ->select('*');
+        if ($_GET['list']=='active') {
+            $authors->where('is_active',1);
+       }
+       if ($_GET['list']=='inactive') {
+            $authors->where('is_active',0);
+       }
+
+       if(isset($_GET['q']))
+       {
+       $authors->where('author_firstname','like','%'.$_GET['q'].'%')
+        ->orWhere('author_middlename','like','%'.$_GET['q'].'%')
+        ->orWhere('author_lastname','like','%'.$_GET['q'].'%')
+         ->orWhere('author_desc','like','%'.$_GET['q'].'%');
+
+
+       }
+       $authors= $authors->paginate(10);
+// dd($materials);
+       return view('admin.contents.authors.view', ['authors' => $authors]);
     }
 
     /**
