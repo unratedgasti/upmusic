@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
+use DB;
 
 class AuthorsController extends Controller
 {
@@ -16,29 +18,29 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-       
+     
         $authors = DB::table('author')
         ->select('*');
         if ($_GET['list']=='active') {
             $authors->where('is_active',1);
-       }
-       if ($_GET['list']=='inactive') {
+        }
+        if ($_GET['list']=='inactive') {
             $authors->where('is_active',0);
-       }
+        }
 
-       if(isset($_GET['q']))
-       {
-       $authors->where('author_firstname','like','%'.$_GET['q'].'%')
-        ->orWhere('author_middlename','like','%'.$_GET['q'].'%')
-        ->orWhere('author_lastname','like','%'.$_GET['q'].'%')
+        if(isset($_GET['q']))
+        {
+         $authors->where('author_firstname','like','%'.$_GET['q'].'%')
+         ->orWhere('author_middlename','like','%'.$_GET['q'].'%')
+         ->orWhere('author_lastname','like','%'.$_GET['q'].'%')
          ->orWhere('author_desc','like','%'.$_GET['q'].'%');
 
 
-       }
-       $authors= $authors->paginate(10);
+     }
+     $authors= $authors->paginate(10);
 // dd($materials);
-       return view('admin.contents.authors.view', ['authors' => $authors]);
-    }
+     return view('admin.contents.authors.view', ['authors' => $authors]);
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -48,6 +50,28 @@ class AuthorsController extends Controller
     public function create()
     {
         //
+    }
+
+    public function change_status()
+    {
+        $id=$_GET['id'];
+        $status=$_GET['status'];
+
+        if($status==1)
+        {
+            DB::table('author')
+            ->where('author_id', $id)
+            ->update(['is_active' => 0]);
+        }
+        else
+        {
+            DB::table('author')
+            ->where('author_id', $id)
+            ->update(['is_active' => 1]);  
+        }
+
+        // return redirect('/admin/materials/view?list='.$_GET['list'].'&response=1');
+        return redirect('/admin/authors/view?list=all&response=1');
     }
 
     /**

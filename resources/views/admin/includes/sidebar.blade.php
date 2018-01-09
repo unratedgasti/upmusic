@@ -71,7 +71,7 @@
                   </li>
                   <li class="{{ ($active_url == 'authors' ? 'active' : '') }}"><a><i class="fa fa-user"></i> Authors <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'authors' ? 'block' : '') }};">
-                      <li><a href="index.html">View All Authors</a></li>
+                      <li><a href="{{URL::to('/admin/authors/view?list=all')}}">View All Authors</a></li>
                       <li><a href="index2.html">Add New Author</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
                     </ul>

@@ -30,6 +30,9 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::post('/admin/materials/store', 'AdminControllers\MaterialsController@store'); 
 	Route::post('/admin/materials/update/{id}', 'AdminControllers\MaterialsController@update'); 
 
+	Route::get('/admin/authors/view', 'AdminControllers\AuthorsController@index');
+	Route::get('/admin/authors/changestatus', 'AdminControllers\AuthorsController@change_status');	
+
 	
 });
 
