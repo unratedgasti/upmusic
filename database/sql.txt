@@ -1,1 +1,3 @@
 ALTER TABLE `material` ADD `material_category_id` INT(11) NULL AFTER `author_id`; -12/12/2017 -done daniel
+
+ALTER TABLE `author` ADD `author_desc` TEXT NULL DEFAULT NULL AFTER `author_lastname`;

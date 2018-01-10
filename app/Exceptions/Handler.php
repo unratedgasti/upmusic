@@ -47,4 +47,19 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $e);
     }
+
+
+    //  public function render($request, Exception $exception)
+    // {
+    //     if ($exception instanceof ModelNotFoundException) {
+    //         $exception = new NotFoundHttpException($exception->getMessage(), $exception);
+    //     }
+ 
+    //     if ($exception instanceof TokenMismatchException) {
+ 
+    //         return redirect(route('admin_login'))->withError('error_message', 'You page session expired. Please try to login again');
+    //     }
+        
+    //     return parent::render($request, $exception);
+    // }
 }
