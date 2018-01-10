@@ -17,7 +17,7 @@
             <button class="btn btn-md btn-success" id="search_code_button" style="float: right" >Search Author</button>
             <div style="overflow: hidden; padding-right: .5em;">
              <select class="js-example-basic-single form-control" name="search_author" id="search_author">
-              <option value="" selected="">Select Something</option>
+              <option value="" selected="">Select Author</option>
               @foreach($author as $value)
                 <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
               @endforeach
@@ -57,16 +57,16 @@
           
             <div style="overflow: hidden; padding-right: .5em;">
              <select class="js-example-basic-single form-control" name="search_author_ad" id="search_author_ad">
-              <option value="" selected="">Select Something</option>
+              <option value="" selected="">Select Author</option>
               @foreach($author as $value)
                 <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
               @endforeach
             </select><br><br>
-            {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
+            {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
               {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
 
              <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
-              <option value="" selected="">Select Something</option>
+              <option value="" selected="">Select Subject</option>
          
             </select><br><br>
         

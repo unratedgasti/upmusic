@@ -85,16 +85,17 @@
   </div>
 -->
 
-<!--  <div  style="padding: 2%">
-  <h1>Author :  {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</h1>
 
-</div> -->
 <div style=" margin: 15px auto;  position: relative;">
 
  <div style="width: 30%;padding: 3%;float: left;position: absolute;" id="sidebar">
+ <div  style="padding: 2%">
+  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
 
+</div>
   {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
-  <h1>Filter Result</h1>
+
+  <h4>Filter Result</h4>
   <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
     </button>
@@ -103,14 +104,14 @@
   <div>       
 
     <div style="overflow: hidden; padding-right: .5em;">
-      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!}  <br>
+      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!}  <br>
      <select class="js-example-basic-single form-control" name="search_subj_ad">
       <option value="" selected="">Select Subject</option>
       @foreach($subject as $value)
       <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
       @endforeach
     </select><br><br>
-    {!! Form::hidden('type', 'filter',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
+    {!! Form::hidden('type', 'filter',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
     
 
   </div>
@@ -144,12 +145,12 @@
           <th class="column-title" style="white-space: nowrap !important;">Container Type </th>
           <th class="column-title"  style="white-space: nowrap !important;">Container Description </th>
           <th class="column-title"  style="white-space: nowrap !important;">Title </th>                            
-          <th class="column-title">Material Type </th>
+          <th class="column-title" style="white-space: nowrap !important;">Material Type </th>
           <th  class="column-title" style="white-space: nowrap !important;">Subject</th>
-          <th class="column-title">Exact or Approx. Number of Items</th>
+          <th class="column-title" style="white-space: nowrap !important;">Exact or Approx. Number of Items</th>
           <th class="column-title">CALL Number </th>
           <th class="column-title">ACC Number </th>
-          <th class="column-title">Inclusion Date</th>
+          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>
         </tr>
       </thead>
       <tbody>                         
@@ -159,7 +160,7 @@
         <td>
           {{ $value->container_type_desc }}
         </td>
-        <td> 
+        <td > 
           {{ $value->material_container_desc }}
         </td>
         <td  style="white-space: nowrap !important;">

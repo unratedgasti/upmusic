@@ -56,7 +56,7 @@
  <div class="row">
     <footer class="col-md-12" id="footer" style="background-color:  #404040;margin-left: 1.5% !important;width: 98.5%">
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            College of Music <a href="">©2018 Copyright TRMD</a>
           </div>
          
         </footer>
