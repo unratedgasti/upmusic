@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Authors</h3>
+        <h3>Authors/Composers</h3>
 
         <div class="btn-group" style="padding-bottom:10px;">
           <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button" aria-expanded="false">Filter List <span class="caret"></span>

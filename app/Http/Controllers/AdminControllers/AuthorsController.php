@@ -18,7 +18,7 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-     
+
         $authors = DB::table('author')
         ->select('*');
         if ($_GET['list']=='active') {
@@ -80,9 +80,22 @@ class AuthorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function create_form(Request $request)
+    {
+
+        return view('admin.contents.authors.add');
+    }
+
     public function store(Request $request)
     {
-        //
+        $insertdata=$request->all();
+        unset($insertdata['_token']);
+
+        DB::table('author')->insert(
+            $insertdata);
+        $data['success']='Author Successfully Added';
+        return view('admin.contents.authors.add', $data);
     }
 
     /**
@@ -102,10 +115,19 @@ class AuthorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $author_detail = DB::table('author')
+        ->select('*')
+        ->where('author_id',$_GET['id'])
+        ->get();
+
+        $data['author']=$author_detail[0];
+      
+        return view('admin.contents.authors.edit', $data);
+        
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -114,10 +136,26 @@ class AuthorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+     public function update(Request $request, $id)
     {
-        //
-    }
+      $updates=$request->all();
+      unset($updates['_token']);
+
+      DB::table('author')
+      ->where('author_id',$id)
+      ->update($updates);
+
+       $author_detail = DB::table('author')
+        ->select('*')
+        ->where('author_id',$id)
+        ->get();
+
+       $data['author']=$author_detail[0];
+
+      $data['success']='Author Successfully Updated';
+      return view('admin.contents.authors.edit', $data);
+      
+  }
 
     /**
      * Remove the specified resource from storage.

@@ -51,3 +51,8 @@ $('#search_btn_materials').click(function(){
 	keyword = $('#search').val();        
 	location.href = "view?list=all&q="+keyword;
 });
+
+$('#search_btn_authors').click(function(){
+	keyword = $('#search').val();        
+	location.href = "view?list=all&q="+keyword;
+});

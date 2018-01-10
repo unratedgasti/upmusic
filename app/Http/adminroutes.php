@@ -25,13 +25,18 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('/admin/materials/add', 'AdminControllers\MaterialsController@create_form');
 	Route::get('/admin/materials/edit', 'AdminControllers\MaterialsController@edit');
 	Route::get('/admin/materials/changestatus', 'AdminControllers\MaterialsController@change_status');
-
 		
 	Route::post('/admin/materials/store', 'AdminControllers\MaterialsController@store'); 
 	Route::post('/admin/materials/update/{id}', 'AdminControllers\MaterialsController@update'); 
 
+
 	Route::get('/admin/authors/view', 'AdminControllers\AuthorsController@index');
 	Route::get('/admin/authors/changestatus', 'AdminControllers\AuthorsController@change_status');	
+	Route::get('/admin/authors/add', 'AdminControllers\AuthorsController@create_form');
+	Route::get('/admin/authors/edit', 'AdminControllers\AuthorsController@edit');
+
+	Route::post('/admin/authors/store', 'AdminControllers\AuthorsController@store');
+	Route::post('/admin/authors/update/{id}', 'AdminControllers\AuthorsController@update'); 
 
 	
 });

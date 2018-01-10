@@ -81,7 +81,7 @@
                             <th class="column-title" style="text-align: center!important;">Actions</th>
                             <th class="column-title" style="text-align: center!important;">Container Type</th>
                             <th class="column-title" style="text-align: center!important;">Container Identifier</th>
-                            <th class="column-title" style="text-align: center!important; white-space: nowrap;">Author Name </th>
+                            <th class="column-title" style="text-align: center!important; white-space: nowrap;">Author/Composer Name </th>
                             <th class="column-title" style="text-align: center!important;">Category</th>
                             <th class="column-title" style="text-align: center!important;">Title</th>
                             <th class="column-title" style="text-align: center!important;">Description</th>
