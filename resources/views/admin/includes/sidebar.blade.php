@@ -79,8 +79,8 @@
                  
                   <li class="{{ ($active_url == 'subjects' ? 'active' : '') }}"><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'subjects' ? 'block' : '') }};">
-                      <li><a href="general_elements.html">View All Subjects</a></li>
-                      <li><a href="media_gallery.html">Add New Subjects</a></li>
+                      <li><a href="{{URL::to('/admin/subjects/view?list=all')}}">View All Subjects</a></li>
+                      <li><a href="{{URL::to('/admin/subjects/add')}}">Add New Subjects</a></li>
                      <!--  <li><a href="typography.html">Typography</a></li>
                       <li><a href="icons.html">Icons</a></li>
                       <li><a href="glyphicons.html">Glyphicons</a></li>
@@ -92,14 +92,14 @@
                   </li>
                   <li class="{{ ($active_url == 'containertype' ? 'active' : '') }}"><a><i class="fa fa-table"></i> Container Types <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'containertype' ? 'block' : '') }};">
-                      <li><a href="tables.html">View All Container Types</a></li>
-                      <li><a href="tables_dynamic.html">Add New Container Types</a></li>
+                      <li><a href="{{URL::to('/admin/containertypes/view?list=all')}}">View All Container Types</a></li>
+                      <li><a href="{{URL::to('/admin/containertypes/add')}}">Add New Container Types</a></li>
                     </ul>
                   </li>
                   <li class="{{ ($active_url == 'materialcategories' ? 'active' : '') }}"><a><i class="fa fa-bar-chart-o"></i> Material Categories <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'materialcategories' ? 'block' : '') }};">
-                      <li><a href="chartjs.html">View All Material Categories</a></li>
-                      <li><a href="chartjs2.html">Add New Material Categories</a></li>
+                      <li><a href="{{URL::to('/admin/materialcategories/view?list=all')}}">View All Material Categories</a></li>
+                      <li><a href="{{URL::to('/admin/materialcategories/add')}}">Add New Material Categories</a></li>
                      <!--  <li><a href="morisjs.html">Moris JS</a></li>
                       <li><a href="echarts.html">ECharts</a></li>
                       <li><a href="other_charts.html">Other Charts</a></li> -->
