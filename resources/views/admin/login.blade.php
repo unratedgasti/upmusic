@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Gentelella Alela! | </title>
+  <title>College of Music | </title>
 
   <!-- Bootstrap -->
   <link href="{!! asset('includes/admin/vendors/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
@@ -35,14 +35,14 @@
             <br>
             <h3><strong>Administrator Login</strong></h3>
             <div>
-            <input id="email" type="email" class="form-control" name="email" placeholder="E-mail" required="" value="{{ old('email') }}">
+            <input id="username" type="text" class="form-control" name="username" placeholder="E-mail" required="" value="{{ old('username') }}">
 
             </div>
             <div>
              <input id="password" type="password" class="form-control" placeholder="Password" name="password" required="">
-            @if ($errors->has('email'))
+            @if ($errors->has('username'))
               <span class="help-block" style="color:red;">
-                <strong>{{ $errors->first('email') }}</strong>
+                <strong>{{ $errors->first('username') }}</strong>
               </span>
               @endif
           </div>

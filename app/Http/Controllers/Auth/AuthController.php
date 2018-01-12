@@ -28,9 +28,9 @@ class AuthController extends Controller
      *
      * @var string
      */
-   protected $redirectTo = 'admin/dashboard';
+    protected $redirectTo = 'admin/dashboard';
     protected $redirectAfterLogout = 'admin_login';
-
+    protected $username = 'username';
     /**
      * Create a new authentication controller instance.
      *
@@ -66,6 +66,7 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
