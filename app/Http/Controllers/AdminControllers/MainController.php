@@ -26,10 +26,33 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function users()
     {
-        //
-    }
+        $users = DB::table('users')
+        ->select('*');
+
+        if(isset($_GET['q']))
+        {
+         $conttypes->where('name','like','%'.$_GET['q'].'%');
+
+     }
+     $users = $users->paginate(10);
+     return view('admin.contents.dashboard.users', ['users' => $users]);
+ }
+
+ public function adduser()
+ {
+    $users = DB::table('users')
+    ->select('*');
+
+    if(isset($_GET['q']))
+    {
+     $conttypes->where('name','like','%'.$_GET['q'].'%');
+
+ }
+ $users = $users->paginate(10);
+ return view('admin.contents.dashboard.adduser', ['users' => $users]);
+}
 
     /**
      * Store a newly created resource in storage.

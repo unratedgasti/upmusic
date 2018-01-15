@@ -20,6 +20,11 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('/admin/dashboard', function () {
 		return view('admin/contents/dashboard/indexcontent');
 	});
+	Route::get('/admin/dashboard/users', 'AdminControllers\MainController@users');
+	Route::get('/admin/dashboard/adduser', 'AdminControllers\MainController@adduser');
+
+	Route::post('/admin/dashboard/register', 'AdminControllers\MainController@register');
+
 
 	Route::get('/admin/materials/view', 'AdminControllers\MaterialsController@index');	
 	Route::get('/admin/materials/add', 'AdminControllers\MaterialsController@create_form');

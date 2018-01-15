@@ -10,10 +10,11 @@
           $url=Request::getPathInfo();
           $segment=explode("/",$url);
           $active_url=$segment[2];
+          // dd($segment[3]);
 
           
           ?>
-          <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? '../includes/admin/images/upcmulogo2.png' : '../../includes/admin/images/upcmulogo2.png') }}" style="width:20%;"></a>
+          <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? (isset($segment[3]) ? '../../includes/admin/images/upcmulogo2.png' : '../includes/admin/images/upcmulogo2.png') : '../../includes/admin/images/upcmulogo2.png') }}" style="width:20%;"></a>
 
          &nbsp;
        <br>

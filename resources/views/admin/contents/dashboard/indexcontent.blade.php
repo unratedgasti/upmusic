@@ -8,7 +8,6 @@
               <div class="title_left">
                 <h3>Plain Page</h3>
               </div>
-              {{dd(auth()->user())}}
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
