@@ -35,7 +35,7 @@
             <br>
             <h3><strong>Administrator Login</strong></h3>
             <div>
-            <input id="username" type="text" class="form-control" name="username" placeholder="E-mail" required="" value="{{ old('username') }}">
+            <input id="username" type="text" class="form-control" name="username" placeholder="Username" required="" value="{{ old('username') }}">
 
             </div>
             <div>

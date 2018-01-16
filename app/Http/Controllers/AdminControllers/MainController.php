@@ -65,6 +65,12 @@ class MainController extends Controller
         //
     }
 
+     public function register(Request $request)
+    {
+        dd($request->all());
+    }
+
+
     /**
      * Display the specified resource.
      *
