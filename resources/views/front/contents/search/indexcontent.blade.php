@@ -88,14 +88,17 @@
 
 <div style=" margin: 15px auto;  position: relative;">
 
- <div style="width: 30%;padding: 3%;float: left;position: absolute;" id="sidebar">
- <div  style="padding: 2%">
-  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
+ <div style="width: 30%;padding: 1%;float: left;position: absolute;" id="sidebar">
+<div style="padding: 2%">
+   <div  style="padding: 2%">
+  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
 
 </div>
   {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
 
-  <h4>Filter Result</h4>
+  <div align="center"  class="alert alert-danger" style="padding: 2%">
+    <h3><i class="fa fa-filter" aria-hidden="true"></i> Filter Result <i class="fa fa-filter" aria-hidden="true"></i></h3>
+  </div>
   <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
     </button>
@@ -103,7 +106,8 @@
   </div>
   <div>       
 
-    <div style="overflow: hidden; padding-right: .5em;">
+    <div style="overflow: hidden; padding-right: .5em;"><br>
+
       {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!}  <br>
      <select class="js-example-basic-single form-control" name="search_subj_ad">
       <option value="" selected="">Select Subject</option>
@@ -117,7 +121,7 @@
   </div>
   {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
   <div align="center">
-   <br> <button class="btn btn-md btn-success" id="search_code_button"  >Filter</button>
+   <br> <button class="btn btn-md btn-success btn-lg" id="search_code_button"  ><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
  </div>
 </div>
 
@@ -127,9 +131,10 @@
 {!! Form::close() !!}
 
 <div align="right">
-  <a href="{{ url('/') }}" >Back to Search</a> 
+  <a href="{{ url('/') }}" ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Search</a> 
 </div>
 <br>
+</div>
 </div>
 
 
@@ -140,7 +145,7 @@
     -moz-box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);  box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);padding-top: 2%;padding-left:  1%;padding-right: 1%;padding-bottom: 1%">
     <table class="table table-striped jambo_table bulk_action" style="width: 100%">
       <thead>                  
-        <tr class="headings">
+        <tr class="headings" style="font-size: 16px;">
           <th class="column-title" style="white-space: nowrap !important;">Box/Folder No. </th>
           <th class="column-title" style="white-space: nowrap !important;">Container Type </th>
           <th class="column-title"  style="white-space: nowrap !important;">Container Description </th>
@@ -153,7 +158,7 @@
           <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>
         </tr>
       </thead>
-      <tbody>                         
+      <tbody style="font-size: 14px">                         
        @foreach ($material as $value)
        <tr class="even pointer">
         <td>{{ $value->container_type_id }}</td>

@@ -5,16 +5,33 @@
 
   <div class="login_wrapper" id="searchnorm">
       <section class="login_content"  style="padding-top: 55px">
+    
       
           {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
           <h1>Search Author</h1>
+             @if(count($errors))
+
+  <div class="alert alert-danger">
+
+
+      @foreach($errors->all() as $error)
+
+     {{ $error }}
+
+      @endforeach
+
+    
+
+  </div>
+
+@endif
           <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
             </button>
             <span id="errorcode"></span>
           </div>
           <div>       
-            <button class="btn btn-md btn-success" id="search_code_button" style="float: right" >Search Author</button>
+            <button class="btn btn-md btn-success" id="search_code_button" style="float: right" ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
             <div style="overflow: hidden; padding-right: .5em;">
              <select class="js-example-basic-single form-control" name="search_author" id="search_author">
               <option value="" selected="">Select Author</option>
@@ -73,7 +90,7 @@
           </div>
           {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
               <div align="center"><br>
-                <button class="btn btn-md btn-success" id="search_code_button"  >Search</button>
+                <button class="btn btn-md btn-success" id="search_code_button"  ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
             </div>
           </div>
   

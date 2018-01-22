@@ -126,7 +126,8 @@ class SearchController extends Controller
                    $material =  $query->paginate(10);
 
             }else{
-        $material = DB::table('material')
+                if($request->search_author){
+                  $material = DB::table('material')
                     ->select('*')
                     ->leftjoin('author','material.author_id','=','author.author_id')
                     ->leftjoin('container_type','material.container_type_id','=','container_type.container_type_id')
@@ -134,6 +135,19 @@ class SearchController extends Controller
                     ->leftjoin('subject','material.subject_id','=','subject.subject_id')
                     ->where('material.author_id',$request->search_author)
                     ->paginate(10);
+                }else{
+                   $this->validate($request, [
+            'search_author' => 'required',
+           
+            ],
+            [
+            'search_author.required' => 'Author is required.',
+          
+            ]
+            );
+
+                }
+    
             }
          $author = DB::table('author')->select('*')->get();
          $subject = DB::table('material')->select('*')->leftjoin('subject','material.subject_id','=','subject.subject_id')->where('material.author_id',$request->search_author)->groupby('material.subject_id')->get();
