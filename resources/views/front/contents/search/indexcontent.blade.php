@@ -108,7 +108,7 @@
 
     <div style="overflow: hidden; padding-right: .5em;"><br>
 
-      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!}  <br>
+      {!! Form::text('title', '',array('class'=>'form-control')) !!}  <br>
      <select class="js-example-basic-single form-control" name="search_subj_ad">
       <option value="" selected="">Select Subject</option>
       @foreach($subject as $value)
@@ -118,6 +118,7 @@
     {!! Form::hidden('type', 'filter',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
     
 
+    {!! Form::hidden('author_id', $material[0]->author_id,array('class'=>'form-control')) !!} 
   </div>
   {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
   <div align="center">
