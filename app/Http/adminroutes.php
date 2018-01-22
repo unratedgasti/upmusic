@@ -70,6 +70,9 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::post('/admin/materialcategories/store', 'AdminControllers\MaterialcategoriesController@store');
 	Route::post('/admin/materialcategories/update/{id}', 'AdminControllers\MaterialcategoriesController@update');
 
+
+	Route::get('/admin/backupreports/view_reports', 'AdminControllers\BackupController@index');
+
 	
 });
 

@@ -109,7 +109,7 @@
                    <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'backupreports' ? 'block' : '') }};">
                       <li><a href="chartjs.html">Back-ups</a></li>
-                      <li><a href="chartjs2.html">Reports</a></li>
+                      <li><a href="{{URL::to('/admin/backupreports/view_reports')}}">Reports</a></li>
                      <!--  <li><a href="morisjs.html">Moris JS</a></li>
                       <li><a href="echarts.html">ECharts</a></li>
                       <li><a href="other_charts.html">Other Charts</a></li> -->

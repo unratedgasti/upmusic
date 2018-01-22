@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App;
 use DB;
 
 class AuthorsController extends Controller
@@ -18,6 +19,9 @@ class AuthorsController extends Controller
      */
     public function index()
     {
+//         $pdf = App::make('dompdf.wrapper');
+// $pdf->loadHTML('<h1>Test</h1>');
+// return $pdf->stream();
 
         $authors = DB::table('author')
         ->select('*');
