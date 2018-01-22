@@ -54,6 +54,7 @@
 </script>
 <script type="text/javascript" src="{!! asset('includes/front/userjs/search.js') !!}"></script>
  <div class="row">
+    <br><br>
     <footer id="footer" style="background-color:  #404040;margin-left: .5% !important;width: 100.3%">
           <div class="pull-right">
             College of Music <a href="">©2018 Copyright TRMD</a>

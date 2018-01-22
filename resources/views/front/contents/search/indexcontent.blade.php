@@ -90,15 +90,16 @@
 
  <div style="width: 30%;padding: 1%;float: left;position: absolute;" id="sidebar">
 <div style="padding: 2%">
-   <div  style="padding: 2%">
-  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
-
-</div>
+  
   {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
 
   <div align="center"  class="alert alert-danger" style="padding: 2%">
     <h3><i class="fa fa-filter" aria-hidden="true"></i> Filter Result <i class="fa fa-filter" aria-hidden="true"></i></h3>
   </div>
+   <div  style="padding: 2%">
+  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
+
+</div>
   <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
     </button>
@@ -108,14 +109,14 @@
 
     <div style="overflow: hidden; padding-right: .5em;"><br>
 
-      {!! Form::text('title', '',array('class'=>'form-control')) !!}  <br>
+      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  <br>
      <select class="js-example-basic-single form-control" name="search_subj_ad">
       <option value="" selected="">Select Subject</option>
       @foreach($subject as $value)
       <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
       @endforeach
     </select><br><br>
-    {!! Form::hidden('type', 'filter',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
+    {!! Form::hidden('type', 'filter',array('class'=>'form-control'   )) !!} 
     
 
     {!! Form::hidden('author_id', $material[0]->author_id,array('class'=>'form-control')) !!} 

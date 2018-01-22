@@ -80,7 +80,7 @@
               @endforeach
             </select><br><br>
             {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
-              {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
+              {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
 
              <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
               <option value="" selected="">Select Subject</option>
