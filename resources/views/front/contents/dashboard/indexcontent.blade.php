@@ -83,7 +83,7 @@
               {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
 
              <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
-              <option value="" selected="">Select Subject</option>
+              <option value="" selected="">Select author first</option>
          
             </select><br><br>
         

@@ -123,7 +123,7 @@ class SearchController extends Controller
                  if($request->search_subj_ad){
                     $query->where('material.subject_id','=', $request->search_subj_ad);
                 }
-                $query->where('material.author_id',$request->author_id);
+                $query->where('material.author_id',$request->search_author);
                    $material =  $query->paginate(10);
 
             }else{
