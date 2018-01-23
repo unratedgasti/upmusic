@@ -28,7 +28,7 @@ trait AuthenticatesUsers
     public function showLoginForm()
     {
         $view = property_exists($this, 'loginView')
-        ? $this->loginView : 'auth.authenticate';
+                    ? $this->loginView : 'auth.authenticate';
 
         if (view()->exists($view)) {
             return view($view);
@@ -45,27 +45,8 @@ trait AuthenticatesUsers
      */
     public function postLogin(Request $request)
     {
-        //return $this->login($request);
-      
-     
-     $this->validate($request, [
-        'username' => 'required', 'password' => 'required',
-        ]);
-
-     $credentials = $request->only('username', 'password');
-
-     if ($this->auth->attempt($credentials, $request->has('remember')))
-     {
-        return redirect()->intended($this->redirectPath());
+        return $this->login($request);
     }
-
-    return redirect($this->loginPath())
-    ->withInput($request->only('username', 'remember'))
-    ->withErrors([
-        'username' => $this->getFailedLoginMessage(),
-        ]);   
-
-}
 
     /**
      * Handle a login request to the application.
@@ -114,7 +95,7 @@ trait AuthenticatesUsers
     {
         $this->validate($request, [
             $this->loginUsername() => 'required', 'password' => 'required',
-            ]);
+        ]);
     }
 
     /**
@@ -146,9 +127,9 @@ trait AuthenticatesUsers
     protected function sendFailedLoginResponse(Request $request)
     {
         return redirect()->back()
-        ->withInput($request->only($this->loginUsername(), 'remember'))
-        ->withErrors([
-            $this->loginUsername() => $this->getFailedLoginMessage(),
+            ->withInput($request->only($this->loginUsername(), 'remember'))
+            ->withErrors([
+                $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
     }
 
@@ -160,8 +141,8 @@ trait AuthenticatesUsers
     protected function getFailedLoginMessage()
     {
         return Lang::has('auth.failed')
-        ? Lang::get('auth.failed')
-        : 'These credentials do not match our records.';
+                ? Lang::get('auth.failed')
+                : 'These credentials do not match our records.';
     }
 
     /**
@@ -226,7 +207,7 @@ trait AuthenticatesUsers
     {
         return in_array(
             ThrottlesLogins::class, class_uses_recursive(static::class)
-            );
+        );
     }
 
     /**
