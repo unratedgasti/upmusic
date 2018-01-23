@@ -13,6 +13,13 @@ return array(
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminControllers\\AuthorsController' => $baseDir . '/app/Http/Controllers/AdminControllers/AuthorsController.php',
+<<<<<<< HEAD
+<<<<<<< HEAD
+    'App\\Http\\Controllers\\AdminControllers\\BackupController' => $baseDir . '/app/Http/Controllers/AdminControllers/BackupController.php',
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
     'App\\Http\\Controllers\\AdminControllers\\ContainertypesController' => $baseDir . '/app/Http/Controllers/AdminControllers/ContainertypesController.php',
     'App\\Http\\Controllers\\AdminControllers\\MainController' => $baseDir . '/app/Http/Controllers/AdminControllers/MainController.php',
     'App\\Http\\Controllers\\AdminControllers\\MaterialcategoriesController' => $baseDir . '/app/Http/Controllers/AdminControllers/MaterialcategoriesController.php',

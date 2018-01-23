@@ -305,6 +305,13 @@ class ComposerStaticInite69088b48a62415e830d2352a1468c3f
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminControllers\\AuthorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminControllers/AuthorsController.php',
+<<<<<<< HEAD
+<<<<<<< HEAD
+        'App\\Http\\Controllers\\AdminControllers\\BackupController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminControllers/BackupController.php',
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         'App\\Http\\Controllers\\AdminControllers\\ContainertypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminControllers/ContainertypesController.php',
         'App\\Http\\Controllers\\AdminControllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminControllers/MainController.php',
         'App\\Http\\Controllers\\AdminControllers\\MaterialcategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminControllers/MaterialcategoriesController.php',
