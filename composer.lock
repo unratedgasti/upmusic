@@ -1436,25 +1436,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "time": "2018-01-03T07:37:34+00:00"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4662eb9a5f2ff22854dd7d67ae50840bfd978ddf
-            "time": "2018-01-03T07:37:34+00:00"
-=======
-            "time": "2018-01-03 07:37:34"
->>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
-<<<<<<< HEAD
-=======
-=======
-            "time": "2018-01-03 07:37:34"
->>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
->>>>>>> 4662eb9a5f2ff22854dd7d67ae50840bfd978ddf
->>>>>>> b018c679bf732673bbfbefa8ffd9c3ad23597aaf
         },
         {
             "name": "symfony/finder",
@@ -3444,20 +3426,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2018-01-03T07:37:11+00:00"
-<<<<<<< HEAD
-=======
-=======
-=======
-<<<<<<< HEAD
-            "time": "2018-01-03T07:37:11+00:00"
-=======
-            "time": "2018-01-03 07:37:11"
->>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
-=======
->>>>>>> 4662eb9a5f2ff22854dd7d67ae50840bfd978ddf
-            "time": "2018-01-03 07:37:11"
->>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
->>>>>>> b018c679bf732673bbfbefa8ffd9c3ad23597aaf
         },
         {
             "name": "webmozart/assert",
