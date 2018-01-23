@@ -3150,7 +3150,11 @@
             "symfony/console": "For validating YAML files using the lint command"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2018-01-03T07:37:11+00:00",
+=======
+        "time": "2018-01-03 07:37:11",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2018-01-03 07:37:11",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3219,7 +3223,11 @@
             "symfony/http-kernel": ""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2018-01-03T07:37:34+00:00",
+=======
+        "time": "2018-01-03 07:37:34",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2018-01-03 07:37:34",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3257,7 +3265,10 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         "name": "phpdocumentor/type-resolver",
         "version": "0.3.0",
         "version_normalized": "0.3.0.0",
@@ -3354,6 +3365,9 @@
         "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock."
     },
     {
+<<<<<<< HEAD
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
+=======
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         "name": "sabberworm/php-css-parser",
         "version": "8.1.0",
@@ -3376,7 +3390,11 @@
             "phpunit/phpunit": "*"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2016-07-19T19:14:21+00:00",
+=======
+        "time": "2016-07-19 19:14:21",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2016-07-19 19:14:21",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3426,7 +3444,11 @@
             "phpunit/phpunit": "~5.0"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2017-05-24T10:07:27+00:00",
+=======
+        "time": "2017-05-24 10:07:27",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2017-05-24 10:07:27",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3469,7 +3491,11 @@
             "phpunit/phpunit": "^4.8"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2017-09-13T16:14:37+00:00",
+=======
+        "time": "2017-09-13 16:14:37",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2017-09-13 16:14:37",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3521,7 +3547,11 @@
             "squizlabs/php_codesniffer": "2.*"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2017-11-26T14:49:08+00:00",
+=======
+        "time": "2017-11-26 14:49:08",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2017-11-26 14:49:08",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3582,7 +3612,11 @@
             "php": ">=5.5.9"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "time": "2017-07-29T19:01:17+00:00",
+=======
+        "time": "2017-07-29 19:01:17",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
         "time": "2017-07-29 19:01:17",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d

@@ -8,3 +8,4 @@ Homestead.json
 
 vendor/composer/autoload_classmap.php
 composer.lock
+vendor/composer/installed.json

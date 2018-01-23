@@ -5,6 +5,10 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "hash": "3ae00fe4e1223a652ed69b9dbcd6bffa",
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
     "hash": "3ae00fe4e1223a652ed69b9dbcd6bffa",
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -65,7 +69,11 @@
                 "pdf"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-07-29T19:01:17+00:00"
+=======
+            "time": "2017-07-29 19:01:17"
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
             "time": "2017-07-29 19:01:17"
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -285,6 +293,7 @@
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
             "time": "2017-11-26 14:49:08"
+<<<<<<< HEAD
         },
         {
             "name": "dompdf/dompdf",
@@ -347,6 +356,8 @@
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
             "time": "2017-11-26T14:49:08+00:00"
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1110,6 +1121,7 @@
             "description": "A library to read, parse and export to PDF SVG files.",
             "homepage": "https://github.com/PhenX/php-svg-lib",
             "time": "2017-05-24 10:07:27"
+<<<<<<< HEAD
         },
         {
             "name": "phenx/php-font-lib",
@@ -1187,6 +1199,8 @@
             "description": "A library to read, parse and export to PDF SVG files.",
             "homepage": "https://github.com/PhenX/php-svg-lib",
             "time": "2017-05-24T10:07:27+00:00"
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         },
         {
             "name": "psr/log",
@@ -1350,6 +1364,7 @@
                 "stylesheet"
             ],
             "time": "2016-07-19 19:14:21"
+<<<<<<< HEAD
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -1394,6 +1409,8 @@
                 "stylesheet"
             ],
             "time": "2016-07-19T19:14:21+00:00"
+=======
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1628,7 +1645,11 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2018-01-03T07:37:34+00:00"
+=======
+            "time": "2018-01-03 07:37:34"
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
             "time": "2018-01-03 07:37:34"
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
@@ -3621,7 +3642,11 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2018-01-03T07:37:11+00:00"
+=======
+            "time": "2018-01-03 07:37:11"
+>>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
 =======
             "time": "2018-01-03 07:37:11"
 >>>>>>> c9f3f5db40bf0d0a1d371e93bfe5b7e8b31c342d
