@@ -119,7 +119,7 @@
     {!! Form::hidden('type', 'filter',array('class'=>'form-control'   )) !!} 
     
 
-    {!! Form::hidden('author_id', $material[0]->author_id,array('class'=>'form-control')) !!} 
+    {!! Form::hidden('search_author', $material[0]->author_id,array('class'=>'form-control')) !!} 
   </div>
   {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
   <div align="center">

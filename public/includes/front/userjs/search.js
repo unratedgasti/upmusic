@@ -41,9 +41,8 @@ $('#search_author_ad').on('change',function(){
 				$('#search_sub').html('');
 				var dataoption;
 				 dataoption = "";
-				 dataoption += ' <option value="" selected="">Select Something</option>';
+				 dataoption += ' <option value="" selected="">Select Subject</option>';
 				$.each(data,function(index,val){
-					console.log(val);
 					dataoption += ' <option value="'+val.subject_id+'" >'+val.subject_desc+'</option>';
 				});
 				$('#search_sub').html(dataoption);
