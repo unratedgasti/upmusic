@@ -1,103 +1,18 @@
 @extends('front.index')
 @section('indexcontent')  
 @include('front.includes.topnav') 
-<!--  <div class="login_wrapper" id="searchnorm">
-    
-      <section class="login_content" >
-      
-          {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
-          <h1>Search Author</h1>
-          <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            <span id="errorcode"></span>
-          </div>
-          <div>       
-            <button class="btn btn-md btn-success" id="search_code_button" style="float: right" >Search Author</button>
-            <div style="overflow: hidden; padding-right: .5em;">
-             <select class="js-example-basic-single form-control" name="search_author" id="search_author">
-              <option value="" selected="">Select Something</option>
-              @foreach($author as $value)
-                <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
-              @endforeach
-            </select>
-          </div>
-          </div>
-  
-
-          <div class="clearfix"></div>
-
-        {!! Form::close() !!}
-      </section>
-    <div align="right">
-            <a href="" id="advance">Advance Search</a> 
-
-          </div>
- <br>
-
-  </div>
-
-   <div class="login_wrapper hidden" id="searchad">
-    
-      <section class="login_content" >
-      
-          {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
-          <h1>Search Author</h1>
-          <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            <span id="errorcode"></span>
-          </div>
-          <div>       
-          
-            <div style="overflow: hidden; padding-right: .5em;">
-             <select class="js-example-basic-single form-control" name="search_author_ad" id="search_author_ad">
-              <option value="" selected="">Select Something</option>
-              @foreach($author as $value)
-                <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
-              @endforeach
-            </select><br><br>
-            {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
-              {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Title'   )) !!} 
-
-             <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
-              <option value="" selected="">Select Something</option>
-         
-            </select><br><br>
-        
-          </div>
-          {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
-              <div align="center"><br>
-                <button class="btn btn-md btn-success" id="search_code_button"  >Search</button>
-            </div>
-          </div>
-  
-
-          <div class="clearfix"></div>
-
-        {!! Form::close() !!}
-      </section>
- 
-         <div align="right">
-            <a href="" id="normal">Normal Search</a> 
-          </div>
- <br>
-  </div>
--->
-
 
 <div style=" margin: 15px auto;  position: relative;">
 
  <div style="width: 30%;padding: 1%;float: left;position: absolute;" id="sidebar">
 <div style="padding: 2%">
-  
-  {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
+   {!! Form::open(['url' => '/searchAuthor']) !!}
 
   <div align="center"  class="alert alert-danger" style="padding: 2%">
     <h3><i class="fa fa-filter" aria-hidden="true"></i> Filter Result <i class="fa fa-filter" aria-hidden="true"></i></h3>
   </div>
    <div  style="padding: 2%">
-  <strong style="font-size: 20px">Author :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. {{$material[0]->author_lastname}}</strong>
+  <strong style="font-size: 20px">Artist :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_lastname}}, {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}.</strong>
 
 </div>
   <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
@@ -110,10 +25,10 @@
     <div style="overflow: hidden; padding-right: .5em;"><br>
 
       {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  <br>
-     <select class="js-example-basic-single form-control" name="search_subj_ad">
-      <option value="" selected="">Select Subject</option>
-      @foreach($subject as $value)
-      <option value="{{$value->subject_id}}">{{$value->subject_desc}} </option>
+     <select class="js-example-basic-single form-control" name="search_category">
+      <option value="" selected="">Select Material Category</option>
+      @foreach($category as $value)
+      <option value="{{$value->material_category_id}}">{{$value->material_category_desc}} </option>
       @endforeach
     </select><br><br>
     {!! Form::hidden('type', 'filter',array('class'=>'form-control'   )) !!} 
@@ -153,11 +68,9 @@
           <th class="column-title"  style="white-space: nowrap !important;">Container Description </th>
           <th class="column-title"  style="white-space: nowrap !important;">Title </th>                            
           <th class="column-title" style="white-space: nowrap !important;">Material Type </th>
-          <th  class="column-title" style="white-space: nowrap !important;">Subject</th>
-          <th class="column-title" style="white-space: nowrap !important;">Exact or Approx. Number of Items</th>
-          <th class="column-title">CALL Number </th>
-          <th class="column-title">ACC Number </th>
-          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>
+          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>                                     
+          <th class="column-title" style="white-space: nowrap !important;">Source</th>
+          <th class="column-title" style="white-space: nowrap !important;">Date</th>
         </tr>
       </thead>
       <tbody style="font-size: 14px">                         
@@ -176,20 +89,14 @@
         <td>
           {{ $value->material_category_desc }}
         </td>
-        <td>
-          {{ $value->subject_desc }}
-        </td>                          
-        <td>
-          {{ $value->material_num_copies }}
-        </td>
-        <td>
-         {{ $value->material_call_num }}
-       </td>
-       <td>
-        {{ $value->material_acc_num }}
-      </td>
       <td>
         {{ $value->material_inclusion_dates }}
+      </td>
+      <td>
+        Source
+      </td>
+      <td>
+        Date
       </td>
 
     </tr>

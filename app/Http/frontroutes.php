@@ -15,5 +15,5 @@ Route::resource('/', 'FrontControllers\SearchController@index');
 
 
 
-Route::any('search', 'FrontControllers\SearchController@searchAuthor')->name('search.searchAuthor');
-Route::post('search/getSubject', 'FrontControllers\SearchController@getSubject');
+Route::post('searchAuthor','FrontControllers\SearchController@searchAuthor');
+Route::post('search/getCategory', 'FrontControllers\SearchController@getCategory');

@@ -63,7 +63,7 @@
       
        <section class="login_content" >
       
-          {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
+             {!! Form::open(['url' => '/searchAuthor']) !!}
           <h1>Search Author</h1>
           <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
@@ -88,7 +88,7 @@
             </select><br><br>
         
           </div>
-          {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
+          {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
               <div align="center"><br>
                 <button class="btn btn-md btn-success" id="search_code_button"  ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
             </div>
