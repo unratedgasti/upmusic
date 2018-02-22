@@ -7,7 +7,7 @@
       <section class="login_content"  style="padding-top: 55px">
     
       
-          {!!  Form::open(array('route' => 'search.searchAuthor')) !!}
+          {!! Form::open(['url' => '/searchAuthor']) !!}
           <h1>Search Author</h1>
              @if(count($errors))
 
@@ -63,7 +63,7 @@
       
        <section class="login_content" >
       
-             {!! Form::open(['url' => '/searchAuthor']) !!}
+              {!! Form::open(['url' => '/searchAuthor']) !!}
           <h1>Search Author</h1>
           <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
