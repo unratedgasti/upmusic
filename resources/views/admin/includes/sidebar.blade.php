@@ -27,7 +27,7 @@
        <br>
          <span style="color:white">UP College of Music</span>
          <br>
-         <span style="color:white">Index to Philippine Muic Sources</span>
+         <span style="color:white">Index to Philippine Music Sources</span>
          <br>
          <span style="color:white">"Memorabilia"</span>
        </div>
