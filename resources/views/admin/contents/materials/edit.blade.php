@@ -98,7 +98,7 @@
                      @if($material->author_id == $value->author_id)                      
                       <option value="{{$value->author_id}}" selected>{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
                       @else
-                       <option value="{{$value->author_id}}" >{{$value->author_firstname}} {{$value->author_middlename}} {{$value->author_lastname}}</option>
+                       <option value="{{$value->author_id}}" >{{$value->author_lastname}}, {{$value->author_firstname}} {{$value->author_middlename}} </option>
                       @endif                      
                    
                    @endforeach
@@ -118,7 +118,7 @@
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_desc">Material Description:
               </label>
                <div class="col-md-6 col-sm-6 col-xs-12">
-                <textarea name="material_desc" style="border-color: #aaa!important;" id="material_desc" required="required" class="form-control col-md-7 col-xs-12" rows='3'>{{$material->material_desc}}</textarea>
+                <textarea name="material_desc" style="border-color: #aaa!important;" id="material_desc"  class="form-control col-md-7 col-xs-12" rows='3'>{{$material->material_desc}}</textarea>
               </div>
             </div>
 
@@ -138,8 +138,16 @@
               </select>
             </div>
           </div>
+
+          <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_source">Material Source:
+              </label>
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                <textarea name="material_source" style="border-color: #aaa!important;" id="material_source"  class="form-control col-md-7 col-xs-12" rows='3'>{{$material->material_source}}</textarea>
+              </div>
+            </div>
           
-          @if($material->subject_id==0)
+         <!--  @if($material->subject_id==0)
 
           <div class="form-group">
            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject_id" >Subject:</label>
@@ -168,8 +176,8 @@
             </select>
           </div>
         </div>
-        @endif
-
+        @endif -->
+<!-- 
         <div class="form-group">
          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_num_copies" >Number of Copies:</label>
          <div class="col-md-6 col-sm-6 col-xs-12">
@@ -187,7 +195,7 @@
             <option value="10" selected="{{ ($material->material_num_copies == 10 ? 'true' : 'false') }}">10</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_inclusion_dates">Dates:
@@ -197,21 +205,21 @@
         </div>
       </div>
 
-      <div class="form-group">
+    <!--   <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_call_num">CALL Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" name="material_call_num" value="{{$material->material_call_num}}" style="border-color: #aaa!important;" id="material_call_num" required="required" class="form-control col-md-7 col-xs-12">
         </div>
-      </div>
+      </div> -->
 
-      <div class="form-group">
+ <!--      <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_acc_num">ACC Number:
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" name="material_acc_num" value="{{$material->material_acc_num}}" style="border-color: #aaa!important;" id="material_acc_num" required="required" class="form-control col-md-7 col-xs-12">
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group" align="center">
        <input type="button" id="btn-submit" class="btn btn-round btn-success" value="SAVE">

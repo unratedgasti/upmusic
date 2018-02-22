@@ -5,3 +5,5 @@ ALTER TABLE `author` ADD `author_desc` TEXT NULL DEFAULT NULL AFTER `author_last
 ALTER TABLE `users` ADD `username` VARCHAR(100) NULL AFTER `email`;
 
 UPDATE `upmusic`.`users` SET `username` = 'administrator' WHERE `users`.`id` = 1;
+
+ALTER TABLE `material` ADD `material_source` TEXT NULL DEFAULT NULL AFTER `material_desc`;

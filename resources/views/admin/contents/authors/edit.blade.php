@@ -90,7 +90,7 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="author_desc">Description:
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <textarea name="author_desc" style="border-color: #aaa!important;" id="author_desc" required="required" class="form-control col-md-7 col-xs-12" rows='3'>{{$author->author_desc}}</textarea>
+                      <textarea name="author_desc" style="border-color: #aaa!important;" id="author_desc" class="form-control col-md-7 col-xs-12" rows='3'>{{$author->author_desc}}</textarea>
                     </div>
                   </div>
 

@@ -25,11 +25,11 @@
        <br>
        &nbsp;
        <br>
-         <span>UP College of Music</span>
+         <span style="color:white">UP College of Music</span>
          <br>
-         <span>Index to Filipino Musical Artist and </span>
+         <span style="color:white">Index to Philippine Muic Sources</span>
          <br>
-         <span>their Works</span>
+         <span style="color:white">"Memorabilia"</span>
        </div>
 
    
@@ -70,27 +70,27 @@
                       <li><a href="form_buttons.html">Form Buttons</a></li> -->
                     </ul>
                   </li>
-                  <li class="{{ ($active_url == 'authors' ? 'active' : '') }}"><a><i class="fa fa-user"></i> Authors/Composers <span class="fa fa-chevron-down"></span></a>
+                  <li class="{{ ($active_url == 'authors' ? 'active' : '') }}"><a><i class="fa fa-user"></i> Artists / Composers <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'authors' ? 'block' : '') }};">
-                      <li><a href="{{URL::to('/admin/authors/view?list=all')}}">View All Authors/Composer</a></li>
-                      <li><a href="{{URL::to('/admin/authors/add')}}">Add New Author/Composer</a></li>
+                      <li><a href="{{URL::to('/admin/authors/view?list=all')}}">View All Artists / Composers</a></li>
+                      <li><a href="{{URL::to('/admin/authors/add')}}">Add New Artists / Composers</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
                     </ul>
                   </li>
                  
-                  <li class="{{ ($active_url == 'subjects' ? 'active' : '') }}"><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
+                 <!--  <li class="{{ ($active_url == 'subjects' ? 'active' : '') }}"><a><i class="fa fa-book"></i> Subjects <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'subjects' ? 'block' : '') }};">
                       <li><a href="{{URL::to('/admin/subjects/view?list=all')}}">View All Subjects</a></li>
                       <li><a href="{{URL::to('/admin/subjects/add')}}">Add New Subjects</a></li>
-                     <!--  <li><a href="typography.html">Typography</a></li>
+                      <li><a href="typography.html">Typography</a></li>
                       <li><a href="icons.html">Icons</a></li>
                       <li><a href="glyphicons.html">Glyphicons</a></li>
                       <li><a href="widgets.html">Widgets</a></li>
                       <li><a href="invoice.html">Invoice</a></li>
                       <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li> -->
+                      <li><a href="calendar.html">Calendar</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                   <li class="{{ ($active_url == 'containertype' ? 'active' : '') }}"><a><i class="fa fa-table"></i> Container Types <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'containertype' ? 'block' : '') }};">
                       <li><a href="{{URL::to('/admin/containertypes/view?list=all')}}">View All Container Types</a></li>
