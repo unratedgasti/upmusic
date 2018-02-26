@@ -67,7 +67,13 @@ class MainController extends Controller
 
      public function register(Request $request)
     {
-        dd($request->all());
+          $insertdata=$request->all();
+        unset($insertdata['_token']);
+          dd($insertdata);
+      DB::table('author')->insert(
+            $insertdata);
+        $data['success']='Author Successfully Added';
+        return view('admin.contents.authors.add', $data);
     }
 
 
