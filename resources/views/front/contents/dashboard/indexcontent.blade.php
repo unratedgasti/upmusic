@@ -8,7 +8,7 @@
     
       
           {!! Form::open(['url' => '/searchAuthor']) !!}
-          <h1>Search Author</h1>
+          <h1>Search Artist</h1>
              @if(count($errors))
 
   <div class="alert alert-danger">
@@ -34,7 +34,7 @@
             <button class="btn btn-md btn-success" id="search_code_button" style="float: right" ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
             <div style="overflow: hidden; padding-right: .5em;">
              <select class="js-example-basic-single form-control" name="search_author" id="search_author">
-              <option value="" selected="">Select Author</option>
+              <option value="" selected="">Select Artist</option>
               @foreach($author as $value)
                 <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
               @endforeach
@@ -74,18 +74,18 @@
           
             <div style="overflow: hidden; padding-right: .5em;">
              <select class="js-example-basic-single form-control" name="search_author_ad" id="search_author_ad">
-              <option value="" selected="">Select Author</option>
+              <option value="" selected="">Select Artist</option>
               @foreach($author as $value)
                 <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
               @endforeach
             </select><br><br>
+            <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
+              <option value="" selected="">Please select artist</option>         
+            </select><br><br>
             {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
               {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
 
-             <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
-              <option value="" selected="">Select author first</option>
-         
-            </select><br><br>
+             
         
           </div>
           {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 

@@ -40,8 +40,8 @@
       </div>
       <div id="center" align="center" >
         <h1 style="font-size: 42px">College of Music</h1>
-        <h2 style="font-size: 28px">Index to Filipino Musical Artist and their Works</h2>
-        <h2 style="font-size: 24px">(Memorabilia)</h2>       
+        <h2 style="font-size: 28px">Index to Philippines Music Sources</h2>
+        <h2 style="font-size: 24px">"Memorabilia"</h2>       
       </div>
       <div id="right" >
         <img src="{{asset('includes/front/images/upcom.png')}}" width="100%" class="img-responsive">

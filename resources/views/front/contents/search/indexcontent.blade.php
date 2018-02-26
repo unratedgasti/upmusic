@@ -23,20 +23,20 @@
   <div>       
 
     <div style="overflow: hidden; padding-right: .5em;"><br>
-
-      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  <br>
-     <select class="js-example-basic-single form-control" name="search_category">
+ <select class="js-example-basic-single form-control" name="search_category" id="search_category">
       <option value="" selected="">Select Material Category</option>
       @foreach($category as $value)
       <option value="{{$value->material_category_id}}">{{$value->material_category_desc}} </option>
       @endforeach
     </select><br><br>
+      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  <br>
+    
     {!! Form::hidden('type', 'filter',array('class'=>'form-control'   )) !!} 
     
 
-    {!! Form::hidden('search_author', $material[0]->author_id,array('class'=>'form-control')) !!} 
+    {!! Form::hidden('search_author', $material[0]->author_id,array('class'=>'form-control','id'=>'search_author')) !!} 
   </div>
-  {!! Form::hidden('methodroute', url('search/getSubject'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
+  {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
   <div align="center">
    <br> <button class="btn btn-md btn-success btn-lg" id="search_code_button"  ><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
  </div>
@@ -63,25 +63,21 @@
     <table class="table table-striped jambo_table bulk_action" style="width: 100%">
       <thead>                  
         <tr class="headings" style="font-size: 16px;">
-          <th class="column-title" style="white-space: nowrap !important;">Box/Folder No. </th>
-          <th class="column-title" style="white-space: nowrap !important;">Container Type </th>
-          <th class="column-title"  style="white-space: nowrap !important;">Container Description </th>
+          <th class="column-title" style="white-space: nowrap !important;">No. </th>
+          <th class="column-title" style="white-space: nowrap !important;">Container  </th>
           <th class="column-title"  style="white-space: nowrap !important;">Title </th>                            
           <th class="column-title" style="white-space: nowrap !important;">Material Type </th>
-          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>                                     
           <th class="column-title" style="white-space: nowrap !important;">Source</th>
-          <th class="column-title" style="white-space: nowrap !important;">Date</th>
+          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>
         </tr>
       </thead>
-      <tbody style="font-size: 14px">                         
+      <tbody style="font-size: 14px">   
+      <?php $counter = 1;?>                      
        @foreach ($material as $value)
        <tr class="even pointer">
-        <td>{{ $value->container_type_id }}</td>
+        <td>{{ $counter++ }}</td>
         <td>
-          {{ $value->container_type_desc }}
-        </td>
-        <td > 
-          {{ $value->material_container_desc }}
+          {{ $value->container_type_desc }} -    {{ $value->material_container_desc }}
         </td>
         <td  style="white-space: nowrap !important;">
           {{ $value->material_title }}
@@ -90,13 +86,10 @@
           {{ $value->material_category_desc }}
         </td>
       <td>
+        {{ $value->material_source }}
+      </td>
+      <td>
         {{ $value->material_inclusion_dates }}
-      </td>
-      <td>
-        Source
-      </td>
-      <td>
-        Date
       </td>
 
     </tr>
@@ -114,6 +107,30 @@
 
 
 </div>
+
+@section('scripts')
+<script type="text/javascript">
+  $.ajax({
+      type:"POST",
+      url:$('#methodroute').val(),
+      data:{author:$('#search_author').val(),'_token':$('meta[name="csrf-token"]').attr('content')},
+      beforeSend: function(){
+
+      },
+      success:function(data){
+        $('#search_category').html('');
+        var dataoption;
+         dataoption = "";
+         dataoption += ' <option value="" selected="">Select Material Category</option>';
+        $.each(data,function(index,val){
+          dataoption += ' <option value="'+val.material_category_id+'" >'+val.material_category_desc+'</option>';
+        });
+        $('#search_category').html(dataoption);
+      }
+
+    });
+</script>
+@endsection
 
 @stop
 
