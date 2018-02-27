@@ -55,7 +55,9 @@
  </div>
 </div>
 
-
+<div style="float: right;">
+  <a href="{{url('/')}}"><i class="fa fa-arrow-left"></i> Back to Search</a>
+</div>
 <div class="clearfix"></div>
 
 {!! Form::close() !!}
@@ -76,8 +78,9 @@
           <th class="column-title" style="white-space: nowrap !important;">Container  </th>
           <th class="column-title"  style="white-space: nowrap !important;">Title </th>                            
           <th class="column-title" style="white-space: nowrap !important;">Material Type </th>
+          <th class="column-title" style="white-space: nowrap !important;">Material Description </th>
           <th class="column-title" style="white-space: nowrap !important;">Source</th>
-          <th class="column-title" style="white-space: nowrap !important;">Inclusion Date</th>
+          <th class="column-title" style="white-space: nowrap !important;">Date</th>
         </tr>
       </thead>
       <tbody style="font-size: 14px">   
@@ -93,6 +96,9 @@
         </td>
         <td>
           {{ $value->material_category_desc }}
+        </td>
+        <td>
+          {{ $value->material_desc }}
         </td>
       <td>
         {{ $value->material_source }}

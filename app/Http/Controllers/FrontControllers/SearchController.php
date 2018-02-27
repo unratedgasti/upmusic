@@ -17,7 +17,7 @@
         public function index()
         {
             //
-            $author = DB::table('author')->select('*')->get();
+            $author = DB::table('author')->select('*')->where('is_active',1)->get();
 
             return view('front.contents.dashboard.indexcontent',array('author'=>$author));
         }
@@ -96,7 +96,8 @@
                         ->leftjoin('author','material.author_id','=','author.author_id')
                         ->leftjoin('container_type','material.container_type_id','=','container_type.container_type_id')
                         ->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')
-                        ->leftjoin('subject','material.subject_id','=','subject.subject_id');
+                        ->leftjoin('subject','material.subject_id','=','subject.subject_id')
+                        ->where('material.is_active',1);
                         if($request->search_author_ad){
                             $query->where('material.author_id','=', $request->search_author_ad);
                         }
@@ -115,7 +116,8 @@
                         ->leftjoin('author','material.author_id','=','author.author_id')
                         ->leftjoin('container_type','material.container_type_id','=','container_type.container_type_id')
                         ->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')
-                        ->leftjoin('subject','material.subject_id','=','subject.subject_id');
+                        ->leftjoin('subject','material.subject_id','=','subject.subject_id')
+                         ->where('material.is_active',1);
                      
                         if($request->title){
                             $query->where('material.material_title','like','%'. $request->title.'%');
@@ -135,6 +137,7 @@
                         ->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')
                         ->leftjoin('subject','material.subject_id','=','subject.subject_id')
                         ->where('material.author_id',$request->search_author)
+                         ->where('material.is_active',1)
                         ->paginate(10);
                     }else{
                        $this->validate($request, [
@@ -150,7 +153,7 @@
                     }
         
                 }
-             $author = DB::table('author')->select('*')->get();
+             $author = DB::table('author')->select('*')->where('is_active',1)->get();
              $category = DB::table('material')->select('*')->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')->where('material.author_id',$request->search_author)->groupby('material.material_category_id')->get();
             return view('front.contents.search.indexcontent',array('material'=>$material,'author'=>$author,'category'=>$category));
         }
