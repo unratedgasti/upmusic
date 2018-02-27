@@ -1,12 +1,25 @@
 @extends('front.index')
 @section('indexcontent')  
 @include('front.includes.topnav') 
+<style type="text/css">
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+</style>
 
-<div style=" margin: 15px auto;  position: relative;">
-
- <div style="width: 30%;padding: 1%;float: left;position: absolute;" id="sidebar">
-<div style="padding: 2%">
-   {!! Form::open(['url' => '/searchAuthor']) !!}
+<div class="row">
+  <div class="col-md-4 col-sm-12 col-xs-12" style="padding-left: 2%">
+     {!! Form::open(['url' => '/searchAuthor']) !!}
 
   <div align="center"  class="alert alert-danger" style="padding: 2%">
     <h3><i class="fa fa-filter" aria-hidden="true"></i> Filter Result <i class="fa fa-filter" aria-hidden="true"></i></h3>
@@ -46,21 +59,17 @@
 <div class="clearfix"></div>
 
 {!! Form::close() !!}
+  </div>
+ <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                
 
-<div align="right">
-  <a href="{{ url('/') }}" ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Search</a> 
-</div>
-<br>
-</div>
-</div>
+                  <div class="x_content">
 
-
-
-<div class="x_panel " style="width: 70%;float: right;">
-  <div class="x_content" >
-    <div class="table-responsive" style="-webkit-box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);overflow:auto;  
+                    
+<div class="table-responsive" style="-webkit-box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);overflow:auto;  
     -moz-box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);  box-shadow: 1px 2px 13px 0px rgba(8,8,8,0.42);padding-top: 2%;padding-left:  1%;padding-right: 1%;padding-bottom: 1%">
-    <table class="table table-striped jambo_table bulk_action" style="width: 100%">
+    <table class="table table-striped jambo_table " style="width: 100%">
       <thead>                  
         <tr class="headings" style="font-size: 16px;">
           <th class="column-title" style="white-space: nowrap !important;">No. </th>
@@ -72,9 +81,9 @@
         </tr>
       </thead>
       <tbody style="font-size: 14px">   
-      <?php $counter = 1;?>                      
+      <?php $counter = 1;?>              
        @foreach ($material as $value)
-       <tr class="even pointer">
+       <tr>
         <td>{{ $counter++ }}</td>
         <td>
           {{ $value->container_type_desc }} -    {{ $value->material_container_desc }}
@@ -93,18 +102,20 @@
       </td>
 
     </tr>
-    @endforeach                        
+    @endforeach                    
   </tbody>
 
 </table>
 <div>
   {!! $material->render() !!}
-</div>                           
-
+              
+            
+                  </div>
+                </div>
+              </div>
 </div>
 </div>
-</div>
-
+<button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-primary"><i class="fa fa-arrow-up" aria-hidden="true"></i> Go to top</button>
 
 </div>
 
