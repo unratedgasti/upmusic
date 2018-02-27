@@ -154,7 +154,8 @@
                         <td class=" ">{{$material->material_category_desc}}</td>
                         <td class=" ">{{$material->material_title}}</td>
                         <td class=" ">{{$material->material_desc}}</td>
-                          <td class="">{{$material->material_source}}</td>
+                        <td class="">{{$material->material_source}}</td>
+                        <td class="">{{$material->material_inclusion_dates}}</td>
                        <!--  <td class=" " align="center">{{$material->material_num_copies}}</td>
                         <td class="">{{$material->material_inclusion_dates}}</td>
                         <td class="">{{$material->material_call_num}}</td>

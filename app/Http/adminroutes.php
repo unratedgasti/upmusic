@@ -17,9 +17,7 @@ Route::get('admin_login', function () {
 });
 Route::group(['middleware'=>'auth'], function(){
 
-	Route::get('/admin/dashboard', function () {
-		return view('admin/contents/dashboard/indexcontent');
-	});
+	Route::get('/admin/dashboard', 'AdminControllers\MainController@index');
 	Route::get('/admin/dashboard/users', 'AdminControllers\MainController@users');
 	Route::get('/admin/dashboard/adduser', 'AdminControllers\MainController@adduser');
 
@@ -72,6 +70,9 @@ Route::group(['middleware'=>'auth'], function(){
 
 
 	Route::get('/admin/backupreports/view_reports', 'AdminControllers\BackupController@index');
+	Route::get('/admin/backupreports/database_backup', 'AdminControllers\BackupController@database');
+	Route::get('/admin/backupreports/all_artist', 'AdminControllers\BackupController@report_all_artists');
+	Route::post('/admin/backupreports/specific_artist', 'AdminControllers\BackupController@report_specific_artists');
 
 	
 });

@@ -95,7 +95,8 @@ class AuthorsController extends Controller
     {
         $insertdata=$request->all();
         unset($insertdata['_token']);
-
+        $insertdata['added_by']=Auth::user()->id;
+        
         DB::table('author')->insert(
             $insertdata);
         $data['success']='Author Successfully Added';

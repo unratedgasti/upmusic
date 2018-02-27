@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Reports</h3>
+        <h3>Backup</h3>
 
         <!-- <div class="btn-group" style="padding-bottom:10px;">
           <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button" aria-expanded="false">Filter List <span class="caret"></span>
@@ -52,9 +52,7 @@
           <br>
            <div class="form-group">
                         <div class="col-md-12">
-                          <a href="{{URL::to('/admin/backupreports/all_artist')}}" class="btn btn-primary">Generate List for All Artists</a>
-
-                            <a href="{{URL::to('/admin/backupreports/view_reports?specific=1')}}" class="btn btn-primary">Generate List for Specific Artist</a>                       
+                          <a href="{{URL::to('/admin/backupreports/generate_database_backup')}}" class="btn btn-primary">Generate Database Backup</a>                      
                         </div>
                       </div>
 
@@ -80,27 +78,7 @@
                   </div>
 
                   <div class="x_content" align="center">
-                    @if(isset($_GET['specific']))
-                    <br>
-                     {{ Form::open(array('url' => 'admin/backupreports/specific_artist', 'method' => 'post', 'class'=>'form-horizontal form-label-left')) }}
-                    <div class="form-group">
-                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="author_id" >Artist / Composer:</label>
-                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <select id="author_id" name="author_id" class="form-control select2" required>
-                     <option value="">--Please Select--</option>
-                     @foreach($author as $value)                        
-                     <option value="{{$value->author_id}}">{{$value->author_lastname}}, {{$value->author_firstname}} {{$value->author_middlename}} </option>
-                     @endforeach
-                   </select>
-                 </div>
-               
-             </div>
-               <br>
-               <input type="submit" class="btn btn-success" value="Generate">
-               {{ Form::close() }}
-               @endif
-              
-
+                  
                  
               </div>
             </div>

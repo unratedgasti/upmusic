@@ -106,9 +106,10 @@
                       <li><a href="other_charts.html">Other Charts</a></li> -->
                     </ul>
                   </li>
-                   <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a>
+                   <!-- <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Back-ups and Reports <span class="fa fa-chevron-down"></span></a> -->
+                    <li class="{{ ($active_url == 'backupreports' ? 'active' : '') }}"><a><i class="fa fa-cog"></i> Reports <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:{{ ($active_url == 'backupreports' ? 'block' : '') }};">
-                      <li><a href="chartjs.html">Back-ups</a></li>
+                    <!--   <li><a href="{{URL::to('/admin/backupreports/database_backup')}}">Back-ups</a></li> -->
                       <li><a href="{{URL::to('/admin/backupreports/view_reports')}}">Reports</a></li>
                      <!--  <li><a href="morisjs.html">Moris JS</a></li>
                       <li><a href="echarts.html">ECharts</a></li>

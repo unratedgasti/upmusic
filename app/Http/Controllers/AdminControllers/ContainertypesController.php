@@ -86,6 +86,7 @@ class ContainertypesController extends Controller
     {
         $insertdata=$request->all();
         unset($insertdata['_token']);
+        $insertdata['added_by']=Auth::user()->id;
 
         DB::table('container_type')->insert(
             $insertdata);

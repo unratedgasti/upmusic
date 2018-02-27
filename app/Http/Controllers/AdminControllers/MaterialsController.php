@@ -136,6 +136,7 @@ class MaterialsController extends Controller
 
         $insertdata=$request->all();
         unset($insertdata['_token']);
+        $insertdata['created_by']=Auth::user()->id;
 
         DB::table('material')->insert(
             $insertdata);

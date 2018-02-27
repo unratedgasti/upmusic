@@ -7,3 +7,11 @@ ALTER TABLE `users` ADD `username` VARCHAR(100) NULL AFTER `email`;
 UPDATE `upmusic`.`users` SET `username` = 'administrator' WHERE `users`.`id` = 1;
 
 ALTER TABLE `material` ADD `material_source` TEXT NULL DEFAULT NULL AFTER `material_desc`;
+
+ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `author` ADD `added_by` VARCHAR(11) NULL DEFAULT NULL AFTER `date_created`;
+
+ALTER TABLE `container_type` ADD `added_by` VARCHAR(11) NULL DEFAULT NULL AFTER `date_created`;
+
+ALTER TABLE `material_category` ADD `added_by` VARCHAR(11) NULL DEFAULT NULL AFTER `date_created`;

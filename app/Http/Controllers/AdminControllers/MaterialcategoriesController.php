@@ -80,6 +80,7 @@ class MaterialcategoriesController extends Controller
     {
         $insertdata=$request->all();
         unset($insertdata['_token']);
+        $insertdata['added_by']=Auth::user()->id;
 
         DB::table('material_category')->insert(
             $insertdata);

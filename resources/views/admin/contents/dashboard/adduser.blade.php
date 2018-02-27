@@ -46,6 +46,14 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                     @if(isset($datas))
+                    <div class="alert alert-success alert-dismissible " role="alert">
+                     <strong>{{$datas}}</strong>
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>                    
+                  @endif
                    <div class="table-responsive"  style="overflow-x: auto; width:100%;padding-bottom:20px" >
                     <!-- <table class="table table-striped jambo_table bulk_action"> -->
                     <table class="table jambo_table table-bordered rable-responsive" style="padding-bottom:20px">
@@ -55,6 +63,7 @@
                               <input type="checkbox" id="check-all" class="flat">
                             </th> -->
                             <th class="column-title" style="text-align: center!important;">Actions</th>
+                            <th class="column-title" style="text-align: center!important;">ID</th>
                             <th class="column-title" style="text-align: center!important;">Name</th>
 
                             <!-- <th class="column-title no-link last"><span class="nobr">Action</span>
@@ -82,7 +91,8 @@
                               </li> -->
                             </ul>
                           </div>
-                        </td>       
+                        </td>      
+                            <td class=" " style="white-space: nowrap; text-align: center!important;">{{$user->id}}</td> 
                         <td class=" " style="white-space: nowrap; text-align: center!important;">{{$user->name}}</td>
 
                       </tr>
