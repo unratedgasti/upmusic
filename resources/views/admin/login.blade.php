@@ -49,7 +49,7 @@
             <button type="submit" class="btn btn-primary">
               <i class="fa fa-btn fa-sign-in"></i> Login
             </button>
-            <a class="reset_pass" href="#">Lost your password?</a>
+       <!--      <a class="reset_pass" href="#">Lost your password?</a> -->
           </div>
 
           <div class="clearfix"></div>
