@@ -31,34 +31,28 @@
 		$('.js-example-basic-single').select2({autoClose:true,width:'100%'});
 	});
 
-	$(function() {
+	window.onscroll = function() {scrollFunction()};
 
-    var $sidebar   = $("#sidebar"), 
-        $window    = $(window),
-        offset     = $sidebar.offset(),
-        topPadding = 15;
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
 
-    $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-                marginTop: $window.scrollTop() - offset.top + topPadding
-            });
-        } else {
-            $sidebar.stop().animate({
-                marginTop: 0
-            });
-        }
-    });
-    
-});
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 </script>
 <script type="text/javascript" src="{!! asset('includes/front/userjs/search.js') !!}"></script>
- <div class="row">
+
     <br><br>
-    <footer id="footer" style="background-color:  #404040;margin-left: .5% !important;width: 100.3%">
+    <footer id="footer" style="background-color:  #404040;margin-left: 0 !important;width: 100%">
           <div class="pull-right">
             College of Music <a href="">©2018 Copyright TRMD</a>
           </div>
          
         </footer>
- </div>
