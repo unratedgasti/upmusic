@@ -52,7 +52,7 @@ function topFunction() {
     <br><br>
     <footer id="footer" style="background-color:  #404040;margin-left: 0 !important;width: 100%">
           <div class="pull-right">
-            College of Music <a href="">©2018 Copyright TRMD</a>
+            College of Music <a href="">©2018 TRMD</a>
           </div>
          
         </footer>
