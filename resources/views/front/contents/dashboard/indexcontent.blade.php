@@ -64,7 +64,7 @@
        <section class="login_content" >
       
               {!! Form::open(['url' => '/searchAuthor']) !!}
-          <h1>Search Author</h1>
+          <h1>Search Artist</h1>
           <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
             </button>

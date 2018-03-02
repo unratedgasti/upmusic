@@ -89,8 +89,9 @@
 
         }
         public function searchAuthor(Request $request){
+            $searchauthor ='';
                 if($request->type == 'advance'){
-                    
+
                       $query = DB::table('material')
                         ->select('*')
                         ->leftjoin('author','material.author_id','=','author.author_id')
@@ -102,7 +103,7 @@
                             $query->where('material.author_id','=', $request->search_author_ad);
                         }
                         if($request->title){
-                            $query->where('material.material_title','like','%'. $request->title.'%');
+                            $query->where('material.material_title','like','%'.$request->title.'%');
                      }
                      if($request->search_sub){
                         $query->where('material.material_category_id','=', $request->search_sub);
@@ -110,7 +111,6 @@
                        $material =  $query->paginate(10);
                   
                 }else if($request->type == 'filter'){
-
                     $query = DB::table('material')
                         ->select('*')
                         ->leftjoin('author','material.author_id','=','author.author_id')
@@ -127,7 +127,7 @@
                     }
                     $query->where('material.author_id',$request->search_author);
                        $material =  $query->paginate(10);
-
+                         $searchauthor = $request->search_author;
                 }else{
                     if($request->search_author){
                       $material = DB::table('material')
@@ -153,9 +153,17 @@
                     }
         
                 }
+                 $tick = 0;
+                 $category =[];
              $author = DB::table('author')->select('*')->where('is_active',1)->get();
+             if($request->search_author || $request->search_author_ad){                
              $category = DB::table('material')->select('*')->leftjoin('material_category','material.material_category_id','=','material_category.material_category_id')->where('material.author_id',$request->search_author)->groupby('material.material_category_id')->get();
-            return view('front.contents.search.indexcontent',array('material'=>$material,'author'=>$author,'category'=>$category));
+             $tick = 0;
+             }else{
+                $category =[];
+                $tick = 1;
+             }
+            return view('front.contents.search.indexcontent',array('searchauthor'=>$searchauthor,'tick'=>$tick,'material'=>$material,'author'=>$author,'category'=>$category));
         }
 
       

@@ -16,56 +16,159 @@
   border-radius: 4px;
 }
 </style>
-
 <div class="row">
-  <div class="col-md-4 col-sm-12 col-xs-12" style="padding-left: 2%">
+    <div class="login_content col-md-12 col-sm-12 col-xs-12" style="margin-top: -7%;margin-bottom: -1%">
      {!! Form::open(['url' => '/searchAuthor']) !!}
+  @if($tick == 0)
+    <div class="login_wrapper">
+    
+        <h1>Filter Result</h1>
 
-  <div align="center"  class="alert alert-danger" style="padding: 2%">
-    <h3><i class="fa fa-filter" aria-hidden="true"></i> Filter Result <i class="fa fa-filter" aria-hidden="true"></i></h3>
-  </div>
-   <div  style="padding: 2%">
-  <strong style="font-size: 20px">Artist :</strong> <strong style="font-size: 28px;text-decoration: underline;"> {{$material[0]->author_lastname}}, {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}.</strong>
 
-</div>
-  <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
+     @if(count($material) > 0)
+     <strong style="font-size: 20px">Artist :</strong> <strong style="font-size: 28px;text-decoration: underline;">
+      {{$material[0]->author_lastname}}, {{$material[0]->author_firstname}} {{substr($material[0]->author_middlename,0,1)}}. </strong>
+      @else
+        @foreach($author as $key => $value)
+        @if($value->author_id == $searchauthor)
+         <strong style="font-size: 20px">Artist :</strong> <strong style="font-size: 28px;text-decoration: underline;">
+      {{$value->author_lastname}}, {{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. </strong>
+        @endif
+        @endforeach
+      @endif
+
+    <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
     </button>
     <span id="errorcode"></span>
   </div>
   <div>       
 
-    <div style="overflow: hidden; padding-right: .5em;"><br>
  <select class="js-example-basic-single form-control" name="search_category" id="search_category">
       <option value="" selected="">Select Material Category</option>
       @foreach($category as $value)
       <option value="{{$value->material_category_id}}">{{$value->material_category_desc}} </option>
       @endforeach
     </select><br><br>
-      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  <br>
+      {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title')) !!}  
     
     {!! Form::hidden('type', 'filter',array('class'=>'form-control'   )) !!} 
     
-
-    {!! Form::hidden('search_author', $material[0]->author_id,array('class'=>'form-control','id'=>'search_author')) !!} 
-  </div>
+    {!! Form::hidden('search_author',(count($material) > 0) ? $material[0]->author_id : $searchauthor  , array('class'=>'form-control','id'=>'search_author')) !!} 
   {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
   <div align="center">
-   <br> <button class="btn btn-md btn-success btn-lg" id="search_code_button"  ><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
+ <button class="btn btn-md btn-success btn-lg" id="search_code_button"  ><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
  </div>
 </div>
-
-<div style="float: right;">
-  <a href="{{url('/')}}"><i class="fa fa-arrow-left"></i> Back to Search</a>
-</div>
-<div class="clearfix"></div>
-
 {!! Form::close() !!}
+</div>
+@else
+    
+  <div class="login_wrapper" id="searchnorm">
+    
+        <h1>Filter Result</h1>
+      
+          {!! Form::open(['url' => '/searchAuthor']) !!}
+
+             @if(count($errors))
+
+  <div class="alert alert-danger">
+
+
+      @foreach($errors->all() as $error)
+
+     {{ $error }}
+
+      @endforeach
+
+    
+
   </div>
- <div class="col-md-8 col-sm-12 col-xs-12">
+
+@endif
+          <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+            </button>
+            <span id="errorcode"></span>
+          </div>
+          <div>       
+            <button class="btn btn-md btn-success" id="search_code_button" style="float: right" ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+            <div style="overflow: hidden; padding-right: .5em;">
+             <select class="js-example-basic-single form-control" name="search_author" id="search_author">
+              <option value="" selected="">Select Artist</option>
+              @foreach($author as $value)
+                <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
+              @endforeach
+            </select>
+          </div>
+          </div>
+  
+
+          <div class="clearfix"></div>
+
+        {!! Form::close() !!}
+    <div align="right">
+            <a href="" id="advance">Advance Search</a> 
+
+          </div>
+ <br>
+    
+
+
+  </div>
+
+
+  <div class="login_wrapper hidden" id="searchad">
+        <h1>Filter Result</h1>
+              {!! Form::open(['url' => '/searchAuthor']) !!}
+          <div>       
+          
+            <div style="overflow: hidden; padding-right: .5em;">
+             <select class="js-example-basic-single form-control" name="search_author_ad" id="search_author_ad">
+              <option value="" selected="">Select Artist</option>
+              @foreach($author as $value)
+                <option value="{{$value->author_id}}">{{$value->author_firstname}} {{substr($value->author_middlename,0,1)}}. {{$value->author_lastname}}</option>
+              @endforeach
+            </select><br><br>
+            <select class="js-example-basic-single form-control" name="search_sub" id="search_sub">
+              <option value="" selected="">Please select artist</option>         
+            </select><br><br>
+            {!! Form::hidden('type', 'advance',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!} 
+              {!! Form::text('title', '',array('class'=>'form-control','placeholder'=>'Enter Material Title'   )) !!}              
+        
+          </div>
+          {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
+              <div align="center"><br>
+                <button class="btn btn-md btn-success" id="search_code_button"  ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+            </div>
+          </div>
+  
+
+          <div class="clearfix"></div>
+
+        {!! Form::close() !!}
+ 
+         <div align="right">
+            <a href="" id="normal">Normal Search</a> 
+          </div>
+ <br>
+     
+
+  </div>
+@endif
+
+
+
+  </div>
+</div>
+<div class="row">
+
+ <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                 
-
+<div style="float: right" class="alert alert-warning">
+  <a href="{{url('/')}}"><i class="fa fa-arrow-left"></i> Back to Search</a>
+</div>
                   <div class="x_content">
 
                     
@@ -76,7 +179,10 @@
         <tr class="headings" style="font-size: 16px;">
           <th class="column-title" style="white-space: nowrap !important;">No. </th>
           <th class="column-title" style="white-space: nowrap !important;">Container  </th>
-          <th class="column-title"  style="white-space: nowrap !important;">Title </th>                            
+          <th class="column-title"  style="white-space: nowrap !important;">Title </th>
+          @if($tick == 1)
+          <th class="column-title"  style="white-space: nowrap !important;">Artist </th>   
+          @endif                            
           <th class="column-title" style="white-space: nowrap !important;">Material Type </th>
           <th class="column-title" style="white-space: nowrap !important;">Material Description </th>
           <th class="column-title" style="white-space: nowrap !important;">Source</th>
@@ -84,8 +190,9 @@
         </tr>
       </thead>
       <tbody style="font-size: 14px">   
-      <?php $counter = 1;?>              
-       @foreach ($material as $value)
+      <?php $counter = 1;?>     
+      @if(count($material) > 0)
+         @foreach ($material as $value)
        <tr>
         <td>{{ $counter++ }}</td>
         <td>
@@ -94,6 +201,11 @@
         <td  style="white-space: nowrap !important;">
           {{ $value->material_title }}
         </td>
+        @if($tick == 1)
+           <td  style="white-space: nowrap !important;">
+          {{ $value->author_lastname }}, {{ $value->author_firstname }} {{substr($value->author_middlename,0,1)}}.
+        </td>
+          @endif   
         <td>
           {{ $value->material_category_desc }}
         </td>
@@ -109,6 +221,13 @@
 
     </tr>
     @endforeach                    
+      @else
+      @if($tick == 1)
+         <td colspan="8">No Material Found.</td>
+      @else
+         <td colspan="7">No Material Found.</td>
+      @endif
+      @endif
   </tbody>
 
 </table>
