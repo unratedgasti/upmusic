@@ -30,7 +30,7 @@
         <section class="login_content">
           <form role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
-            <div align="center"><img src="includes/admin/images/upcmulogo2.png" style="width:50%;"></div>
+            <div align="center"><img src="includes/admin/images/UPmc.jpg" style="width:50%;"></div>
             <br>
             <h3><strong>Administrator Login</strong></h3>
             <div>

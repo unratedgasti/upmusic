@@ -14,7 +14,7 @@
 
           
           ?>
-          <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? (isset($segment[3]) ? '../../includes/admin/images/upcmulogo2.png' : '../includes/admin/images/upcmulogo2.png') : '../../includes/admin/images/upcmulogo2.png') }}" style="width:20%;"></a>
+          <a href="{{URL::to('/admin/dashboard')}}" class="site_title"><img src="{{ ($active_url == 'dashboard' ? (isset($segment[3]) ? '../../includes/admin/images/UPmc.jpg' : '../includes/admin/images/UPmc.jpg') : '../../includes/admin/images/UPmc.jpg') }}" style="width:20%;"></a>
 
          &nbsp;
        <br>
@@ -25,11 +25,11 @@
        <br>
        &nbsp;
        <br>
-         <span style="color:white">UP College of Music</span>
+         <span style="color:white">College of Music Library</span>
          <br>
-         <span style="color:white">Index to Philippine Music Sources</span>
+         <span style="color:white">Preservation of Philippine Music Sources</span>
          <br>
-         <span style="color:white">"Memorabilia"</span>
+         <span style="color:white">"Index to Filipino Musical Works"</span>
        </div>
 
    
