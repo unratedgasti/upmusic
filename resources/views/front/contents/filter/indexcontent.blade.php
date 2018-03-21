@@ -233,15 +233,8 @@
   </tbody>
 
 </table>
-<div align="center">
-  @if(isset($_GET['search_author']))
- 
-  {!! $material->appends(['search_author' => $_GET['search_author']])->render() !!}
-  @else
-  {!! $material->appends(['search_author_ad' => $_GET['search_author_ad'],'search_sub' => $_GET['search_sub'],'type' => $_GET['type'],'title' => $_GET['title']])->render() !!}
-  @endif
-
-              
+<div align="center"> 
+  {!! $material->appends(['search_author' => $_GET['search_author'],'search_category' => $_GET['search_category'],'title' => $_GET['title']])->render() !!}
             
                   </div>
                 </div>

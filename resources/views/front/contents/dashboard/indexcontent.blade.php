@@ -6,8 +6,7 @@
   <div class="login_wrapper" id="searchnorm">
       <section class="login_content"  style="padding-top: 55px">
     
-      
-          {!! Form::open(['url' => '/searchAuthor']) !!}
+          {!! Form::open(['url' => '/searchAuthor','method'=>'GET']) !!}
           <h1>Search Artist</h1>
              @if(count($errors))
 
@@ -63,7 +62,7 @@
       
        <section class="login_content" >
       
-              {!! Form::open(['url' => '/searchAuthor']) !!}
+              {!! Form::open(['url' => '/searchAuthor','method'=>'get']) !!}
           <h1>Search Artist</h1>
           <div class="alert alert-danger alert-dismissible fade in hidden" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
@@ -88,7 +87,7 @@
              
         
           </div>
-          {!! Form::hidden('methodroute', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
+          {!! Form::hidden('', url('search/getCategory'),array('class'=>'form-control','id'=>'methodroute'   )) !!} 
               <div align="center"><br>
                 <button class="btn btn-md btn-success" id="search_code_button"  ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
             </div>

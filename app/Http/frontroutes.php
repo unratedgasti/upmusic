@@ -13,7 +13,10 @@
 
 Route::resource('/', 'FrontControllers\SearchController@index');
 
-
-
-Route::post('searchAuthor','FrontControllers\SearchController@searchAuthor');
+/*
+Route::get('searchAuthor/{id}', ['as' => 'searchAuthor', 'uses' => 'FrontControllers\SearchController@searchAuthor']);*/
+/*
+Route::post('searchAuthor','FrontControllers\SearchController@searchAuthor');*/
+Route::get('searchAuthor','FrontControllers\SearchController@searchAuthor');
+Route::get('searchFilter','FrontControllers\SearchController@searchFilter');
 Route::post('search/getCategory', 'FrontControllers\SearchController@getCategory');
