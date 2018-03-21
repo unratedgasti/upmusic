@@ -106,7 +106,7 @@ class MainController extends Controller
     public function register(Request $request)
     {
       $insertdata=$request->all();
-      $password=Hash::make($insertdata['_token']);
+      $password=bcrypt($insertdata['password']);
       unset($insertdata['_token']);
       unset($insertdata['confirm-pass']);
       unset($insertdata['password']);
