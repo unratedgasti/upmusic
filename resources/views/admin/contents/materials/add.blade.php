@@ -77,7 +77,7 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Container Identifier:
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="material_container_desc" style="border-color: #aaa!important;" id="material_container_desc" required="required" class="form-control col-md-7 col-xs-12">
+                      <input type="text" name="material_container_desc" style="border-color: #aaa!important;" id="material_container_desc" required="required" value="Folder" class="form-control col-md-7 col-xs-12">
                     </div>
                   </div>
 

@@ -8,9 +8,9 @@ table, th, td {
 }
 </style>
 <div align="center">
-	<h3>UP College of Music <br>
-Index to Philippine Music Sources <br> 
-"Memorabilia"</h3>
+<h3>College of Music Library<br>
+Preservation of Philippine Music Sources<br> 
+"Index to Filipino Musical Works"</h3>
 	<h2 style="margin-bottom: 0px; padding-bottom: 0px">Material List for All Artists</h2>
 	<h3 style="margin-top: 0px; padding-top: 0px">{{date("m/d/Y")}}</h3>
 </div>
